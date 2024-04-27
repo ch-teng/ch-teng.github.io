@@ -1,7 +1,13 @@
+:root {
+  color-scheme: dark;
 
+}
 body {
   margin: 0;
   padding: 0;
+  height:max-content;
+  width: max-content;
+  overflow-x: hidden;
 }
 div {
   margin: 0;
@@ -10,15 +16,15 @@ div {
 ul {
   margin: 0;
   padding: 0;
-
 }
+
 .hamburger {
-  background: rgba(240, 240, 240 ,0.5);
+  background: rgba(240, 240, 240 ,0.3);
   color: white;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 5rem;
+  border-radius: 2rem;
   height: 3.5rem;
   width: 3.5rem;
   display: grid;
@@ -30,7 +36,7 @@ ul {
 }
 
 .hamburg {
-  background: #6564db;
+  background: #BCF8EC;
   height: .5rem;
   width: 2rem;
   border-radius: .4rem;
@@ -43,12 +49,12 @@ ul {
   top: 0;
   left: -30rem;
   bottom: 0;
-  width: 30rem;
+  width: 45rem;
   z-index: 99;
   border-radius: .5rem;
   display: grid;
   place-content: center;
-
+  justify-content:left;
 }
 .menu li {
   list-style: none;
@@ -56,6 +62,16 @@ ul {
   text-align: right;
   padding: 20% 0 20% 0;
   margin: 0;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.menu li:hover {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
 }
 .menuCover {
   background: rgba(0,0,0,5);
@@ -66,4 +82,27 @@ ul {
   width: 110vw;
   overflow: hidden;
   z-index: 98;
+}
+.page {
+  background: #0a132b;
+  top: 0;
+  left: 0;
+  width: 99vw;
+  height: 100vh;
+}
+
+.scroller {
+  display: flex;
+  gap: 1rem;
+  max-width: 800px;
+  list-style-type: none;
+}
+.job {
+  list-style-type: none;
+  background: white;
+  color: black;
+  place-content: center;
+  padding: 1rem;
+  border-radius: 5rem;
+
 }

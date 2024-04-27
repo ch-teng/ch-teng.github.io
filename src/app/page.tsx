@@ -1,12 +1,13 @@
 "use client";
+import ExperienceScroller from "@/components/ExperienceScroller";
 import {
   motion,
   AnimatePresence,
   useAnimate,
   stagger,
-  AnimationSequence,
   usePresence,
   MotionConfig,
+  Reorder,
 } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -21,11 +22,11 @@ const MenuItems = () => {
           [
             "li",
             {
-              x: "75%",
+              x: ["25rem"],
             },
             {
               type: "spring",
-              delay: stagger(0.2),
+              delay: stagger(0.3),
               at: "-.1",
             },
           ],
@@ -36,8 +37,8 @@ const MenuItems = () => {
         await animate([
           [
             "li",
-            { x: "-25%" },
-            { delay: stagger(0.02, { from: "last" }), at: "<" },
+            { x: "-20rem" },
+            { delay: stagger(0.2, { from: "last" }), at: "<" },
           ],
         ]);
         safeToRemove();
@@ -47,30 +48,51 @@ const MenuItems = () => {
   }, [isPresent]);
 
   return (
-    <motion.ul
-      key="menu"
-      initial={{ left: "-40rem" }}
-      animate={{ left: "-5rem" }}
-      exit={{ left: "-40rem" }}
-      ref={scope}
-      className="menu"
-    >
-      <MotionConfig
+    <>
+      <motion.div
+        key="menuCover"
+        className="menuCover"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        exit={{ opacity: 0 }}
+        ref={scope}
+        transition={{ duration: isPresent ? 0.3 : 0.7, ease: "easeInOut" }}
+      ></motion.div>
+      <motion.ul
+        key="menu"
+        initial={{ left: "-50rem" }}
+        animate={{ left: "-15rem" }}
+        exit={{ left: "-50rem" }}
         transition={{
+          duration: 0.5,
+          ease: "backInOut",
           type: "spring",
-          stiffness: 500,
+          delay: isPresent ? 0 : 0.7,
         }}
+        ref={scope}
+        className="menu"
       >
-        <motion.li initial={{ x: "-5rem" }} whileHover={{ scale: 1.5 }}>
-          whoami
-        </motion.li>
-        <motion.li whileHover={{ scale: 1.5 }}>Experiences</motion.li>
-        <motion.li initial={{ x: "-20%" }} whileHover={{ scale: 1.5 }}>
-          Personal Projects
-        </motion.li>
-        <motion.li whileHover={{ scale: 1.5 }}>Hobbies</motion.li>
-      </MotionConfig>
-    </motion.ul>
+        <MotionConfig
+          transition={{
+            type: "spring",
+            stiffness: 700,
+          }}
+        >
+          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+            whoami
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+            Experiences
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+            Personal Projects
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+            Hobbies
+          </motion.li>
+        </MotionConfig>
+      </motion.ul>
+    </>
   );
 };
 
@@ -120,21 +142,13 @@ export default function Home() {
             layout
           />
         </button>
-        <AnimatePresence>
-          {showMenu && (
-            <motion.div
-              key="menuCover"
-              className="menuCover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease: "anticipate" }}
-            ></motion.div>
-          )}
-        </AnimatePresence>
 
         <AnimatePresence>{showMenu && <MenuItems />}</AnimatePresence>
       </div>
+      <div className="page whoami"></div>
+      <ExperienceScroller />
+      <div className="page PersonalProjects"></div>
+      <div className="page Hobbies"></div>
     </body>
   );
 }
