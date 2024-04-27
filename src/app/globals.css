@@ -91,18 +91,32 @@ ul {
   height: 100vh;
 }
 
+.experience {
+  display: grid;
+  list-style-type: none;
+}
+
 .scroller {
   display: flex;
   gap: 1rem;
   max-width: 800px;
   list-style-type: none;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: nowrap;
 }
 .job {
   list-style-type: none;
-  background: white;
-  color: black;
+  background: 232, 240, 255;
   place-content: center;
   padding: 1rem;
   border-radius: 5rem;
+}
 
+.selected-job-description {
+  background: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 5rem;
+  margin: 1rem;
 }

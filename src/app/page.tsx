@@ -7,11 +7,14 @@ import {
   stagger,
   usePresence,
   MotionConfig,
-  Reorder,
 } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const MenuItems = () => {
+type MenuItemsProps = {
+  onClick: () => void;
+};
+
+const MenuItems = ({ onClick }: MenuItemsProps) => {
   const [isPresent, safeToRemove] = usePresence();
   const [scope, animate] = useAnimate();
 
@@ -57,6 +60,7 @@ const MenuItems = () => {
         exit={{ opacity: 0 }}
         ref={scope}
         transition={{ duration: isPresent ? 0.3 : 0.7, ease: "easeInOut" }}
+        onClick={onClick}
       ></motion.div>
       <motion.ul
         key="menu"
@@ -78,16 +82,16 @@ const MenuItems = () => {
             stiffness: 700,
           }}
         >
-          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             whoami
           </motion.li>
-          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             Experiences
           </motion.li>
-          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             Personal Projects
           </motion.li>
-          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }}>
+          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
             Hobbies
           </motion.li>
         </MotionConfig>
@@ -143,7 +147,9 @@ export default function Home() {
           />
         </button>
 
-        <AnimatePresence>{showMenu && <MenuItems />}</AnimatePresence>
+        <AnimatePresence>
+          {showMenu && <MenuItems onClick={() => handleClick()} />}
+        </AnimatePresence>
       </div>
       <div className="page whoami"></div>
       <ExperienceScroller />
