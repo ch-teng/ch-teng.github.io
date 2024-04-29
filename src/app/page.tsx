@@ -1,5 +1,6 @@
 "use client";
 import ExperienceScroller from "@/components/ExperienceScroller";
+import Whoami from "@/components/Whoami";
 import {
   motion,
   AnimatePresence,
@@ -151,7 +152,7 @@ export default function Home() {
           {showMenu && <MenuItems onClick={() => handleClick()} />}
         </AnimatePresence>
       </div>
-      <div className="page whoami"></div>
+      <Whoami></Whoami>
       <ExperienceScroller />
       <div className="page PersonalProjects"></div>
       <div className="page Hobbies"></div>

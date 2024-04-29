@@ -133,6 +133,7 @@ ul {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  margin-right: 15px;
 }
 
 .selected-job-description {
@@ -159,6 +160,7 @@ ul {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
 
 .selected::before {
   content: "";
@@ -210,4 +212,59 @@ ul {
   left: 0;
   top: 0;
   border-radius: 5rem;
+}
+
+/* Whoami css */
+
+.whoami {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.background-container { 
+  width: 100vw;
+  height: 20vh;
+}
+
+.hill-holder {
+  position: absolute;
+  left: -15%;
+  bottom: 0;
+}
+.bg {
+  stroke: none;
+
+}
+.b4 {
+  fill: #BCF8EC;
+  height: 30%;
+  width: 150%;
+
+}
+.b3 {
+  fill: #7CBAC0;
+  height: 24%;
+  width: 120%;
+}
+.b2 {
+  fill: #25455F;
+  height: 22%;
+  width: 120%;
+
+}
+.b1 {
+  fill: #183146;
+  height: 19%;
+  width: 120%;
+
+}
+.b0 {
+  fill: #0A132B;
+  height: 15%;
+  width: 120%;
+
+
 }
