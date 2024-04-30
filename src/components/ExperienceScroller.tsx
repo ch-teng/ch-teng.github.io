@@ -1,7 +1,8 @@
-import { closestItem, removeItem } from "@/utils/array-utils";
+import { removeItem } from "@/utils/array-utils";
 import { AnimatePresence, Reorder, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import ExperiencesText from "./ExperiencesText";
 
 interface Job {
   title: string;
@@ -65,6 +66,7 @@ export default function ExperienceScroller() {
   };
   return (
     <div className="page experience" id="experiences">
+      <ExperiencesText />
       <Reorder.Group
         className="scroller"
         as="ul"

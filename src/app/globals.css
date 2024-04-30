@@ -22,7 +22,9 @@ ul {
   margin: 0;
   padding: 0;
 }
-
+span {
+  display: inline-block;
+}
 .hamburger {
   background: rgba(240, 240, 240 ,0.3);
   color: white;
@@ -96,17 +98,19 @@ ul {
   height: 100vh;
 }
 
+.experiences-text {
+  font-weight: 500;
+  font-size: 5rem;
+}
 .experience {
   display: flex;
   flex-direction: column;
   list-style-type: none;
   align-items: center;
   justify-content: center;
-
 }
 
 .scroller {
-  
   display: flex;
   gap: 1rem;
   max-width: 100%;
