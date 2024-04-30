@@ -3,19 +3,17 @@ import {motion, stagger, useAnimate, useInView} from "framer-motion";
 
 export default function ExperiencesText() {
   const [scope, animate] = useAnimate();
-  const isInView = useInView(scope);
+  const isInView = useInView(scope, {once: true});
   useEffect(() => {
     if (isInView) {
-      animate("span", { opacity: [0,1], y: ["100%", "0%"]}, { delay: stagger(.05), duration: 1, type: "spring"})
+      animate("span", {opacity: [0,1], y: ["100%", "0%"]}, { delay: stagger(.05), duration: 1, type: "spring", viewport: {once: true }})
     }
   }, [isInView]);
   return (
     <motion.div
       ref={scope}
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // exit={{ opacity: 0 }}
       className="experiences-text"
+      
       >
         <motion.span >E</motion.span>
         <motion.span > x</motion.span>
