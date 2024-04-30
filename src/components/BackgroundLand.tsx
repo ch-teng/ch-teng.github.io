@@ -1,6 +1,10 @@
-import { motion } from "framer-motion";
-import React from "react";
-const BG0 = () => {
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
+
+interface BGProps {
+  scrollProgress: MotionValue<number>;
+}
+const BG0 = ({ scrollProgress }: BGProps) => {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,12 +14,13 @@ const BG0 = () => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0 }}
       preserveAspectRatio={"xMaxYMin slice"}
+      style={{ y: useTransform(scrollProgress, [0, 1], ["60%", "0%"]) }}
     >
       <title>0</title>
       <g id="e4d24abb-8e68-4087-b26e-7950942e77bc" data-name="Layer 2">
         <g id="ac0ed16e-52f1-4b31-9428-014ec565a351" data-name="Layer 1">
-          <motion.path
-            d="M.5,107.83v138h1920V7.83s-478,93-630,65-226-113-515-49-614,17-614,17S108.5,27.83.5,107.83Z"
+          <path
+            d="M0.5,107.8v638h1920V7.8c0,0-478,93-630,65s-226-113-515-49s-614,17-614,17S108.5,27.8,0.5,107.8z"
             fill="#fff"
             className="bg b0"
             stroke="#000"
@@ -27,7 +32,7 @@ const BG0 = () => {
   );
 };
 
-const BG1 = () => {
+const BG1 = ({ scrollProgress }: BGProps) => {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +42,7 @@ const BG1 = () => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.2 }}
       preserveAspectRatio={"xMaxYMin slice"}
+      style={{ y: useTransform(scrollProgress, [0, 1], ["20%", "0%"]) }}
     >
       <title>1</title>
       <g id="b43d5a19-966f-4b32-a512-2f73a3c2c798" data-name="Layer 2">
@@ -53,7 +59,7 @@ const BG1 = () => {
     </motion.svg>
   );
 };
-const BG2 = () => {
+const BG2 = ({ scrollProgress }: BGProps) => {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -63,6 +69,7 @@ const BG2 = () => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.4 }}
       preserveAspectRatio={"xMaxYMin slice"}
+      style={{ y: useTransform(scrollProgress, [0, 1], ["5%", "0%"]) }}
     >
       <title>2</title>
       <g id="bd8dbd6b-d287-4b68-a59e-dabe4fb41009" data-name="Layer 2">
@@ -80,7 +87,7 @@ const BG2 = () => {
   );
 };
 
-const BG3 = () => {
+const BG3 = ({ scrollProgress }: BGProps) => {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -90,6 +97,7 @@ const BG3 = () => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.6 }}
       preserveAspectRatio={"xMaxYMin slice"}
+      style={{ y: useTransform(scrollProgress, [0, 1], ["1%", "0%"]) }}
     >
       <title>3</title>
       <g id="e58d9129-a0c1-4f96-9b95-821975b35825" data-name="Layer 2">
@@ -135,13 +143,15 @@ const BG4 = () => {
 };
 
 export default function BackgroundLand() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
   return (
-    <div className="background-container">
+    <div className="background-ground-container" ref={ref}>
       <BG4 />
-      <BG3 />
-      <BG2 />
-      <BG1 />
-      <BG0 />
+      <BG3 scrollProgress={scrollYProgress} />
+      <BG2 scrollProgress={scrollYProgress} />
+      <BG1 scrollProgress={scrollYProgress} />
+      <BG0 scrollProgress={scrollYProgress} />
     </div>
   );
 }

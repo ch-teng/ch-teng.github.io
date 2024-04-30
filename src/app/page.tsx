@@ -9,6 +9,7 @@ import {
   usePresence,
   MotionConfig,
 } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type MenuItemsProps = {
@@ -18,7 +19,14 @@ type MenuItemsProps = {
 const MenuItems = ({ onClick }: MenuItemsProps) => {
   const [isPresent, safeToRemove] = usePresence();
   const [scope, animate] = useAnimate();
-
+  const handleScroll = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    e.preventDefault();
+    const target = e.currentTarget.className;
+    const targetId = target.replace(/.*\#/, "");
+    const element = document.getElementById(targetId);
+    element?.scrollIntoView({ behavior: "smooth" });
+    onClick();
+  };
   useEffect(() => {
     if (isPresent) {
       const startAni = async () =>
@@ -83,16 +91,36 @@ const MenuItems = ({ onClick }: MenuItemsProps) => {
             stiffness: 700,
           }}
         >
-          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+          <motion.li
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 1 }}
+            className="#whoami"
+            onMouseDown={handleScroll}
+          >
             whoami
           </motion.li>
-          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+          <motion.li
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 1 }}
+            className="#experiences"
+            onMouseDown={handleScroll}
+          >
             Experiences
           </motion.li>
-          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+          <motion.li
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 1 }}
+            className="#personal-projects"
+            onMouseDown={handleScroll}
+          >
             Personal Projects
           </motion.li>
-          <motion.li whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+          <motion.li
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 1 }}
+            className="#hobbies"
+            onMouseDown={handleScroll}
+          >
             Hobbies
           </motion.li>
         </MotionConfig>
@@ -154,8 +182,8 @@ export default function Home() {
       </div>
       <Whoami></Whoami>
       <ExperienceScroller />
-      <div className="page PersonalProjects"></div>
-      <div className="page Hobbies"></div>
+      <div className="page PersonalProjects" id="personal-projects"></div>
+      <div className="page Hobbies" id="hobbies"></div>
     </body>
   );
 }

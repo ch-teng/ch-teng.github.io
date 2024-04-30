@@ -64,7 +64,7 @@ export default function ExperienceScroller() {
     setJobs([job, ...temp]);
   };
   return (
-    <div className="page experience">
+    <div className="page experience" id="experiences">
       <Reorder.Group
         className="scroller"
         as="ul"
