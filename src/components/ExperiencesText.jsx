@@ -16,7 +16,7 @@ export default function ExperiencesText() {
       
       >
         <motion.span >E</motion.span>
-        <motion.span > x</motion.span>
+        <motion.span >x</motion.span>
         <motion.span >p</motion.span>
         <motion.span >e</motion.span>
         <motion.span >r</motion.span>

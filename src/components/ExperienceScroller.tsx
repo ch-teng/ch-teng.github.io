@@ -1,7 +1,7 @@
 import { removeItem } from "@/utils/array-utils";
 import { AnimatePresence, Reorder, motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import ExperiencesText from "./ExperiencesText";
 
 interface Job {
@@ -54,6 +54,30 @@ const experience = [
     imgSrc: "/Hasbro_logo_symbol.png",
     imgDesc: "Hasbro Logo",
   },
+  {
+    title: "Anothob",
+    company: "Hasbro",
+    date: "Jan 2021 - Juns1",
+    description: "lorem",
+    imgSrc: "/Hasbro_logo_symbol.png",
+    imgDesc: "Hasbro Logo",
+  },
+  {
+    title: "Another Job",
+    company: "Hasbro",
+    date: "Jan 2021 a 2021",
+    description: "lorem",
+    imgSrc: "/Hasbro_logo_symbol.png",
+    imgDesc: "Hasbro Logo",
+  },
+  {
+    title: "blah blah blah",
+    company: "blah",
+    date: "Jan 202s",
+    description: "lorem",
+    imgSrc: "/Hasbro_logo_symbol.png",
+    imgDesc: "Hasbro Logo",
+  },
 ];
 
 export default function ExperienceScroller() {
@@ -64,49 +88,123 @@ export default function ExperienceScroller() {
     const temp = removeItem(jobs, job);
     setJobs([job, ...temp]);
   };
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    const ele = scrollerRef.current;
+    if (!ele) {
+      return;
+    }
+    const startPos = {
+      left: ele.scrollLeft,
+      x: e.clientX,
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const dx = e.clientX - startPos.x;
+      ele.scrollLeft = startPos.left - dx;
+      updateCursor(ele);
+    };
+
+    const handleMouseUp = () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+      resetCursor(ele);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  }, []);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    const ele = scrollerRef.current;
+    if (!ele) {
+      return;
+    }
+    const touch = e.touches[0];
+    const startPos = {
+      left: ele.scrollLeft,
+      x: touch.clientX,
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      const dx = touch.clientX - startPos.x;
+      ele.scrollLeft = startPos.left - dx;
+      updateCursor(ele);
+    };
+
+    const handleTouchEnd = () => {
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleTouchEnd);
+      resetCursor(ele);
+    };
+
+    document.addEventListener("touchmove", handleTouchMove);
+    document.addEventListener("touchend", handleTouchEnd);
+  }, []);
+
+  const updateCursor = (ele: HTMLDivElement | null) => {
+    if (!ele) return;
+    ele.style.cursor = "grabbing";
+    ele.style.userSelect = "none";
+  };
+
+  const resetCursor = (ele: HTMLDivElement | null) => {
+    if (!ele) return;
+    ele.style.cursor = "grab";
+    ele.style.removeProperty("user-select");
+  };
+
   return (
     <div className="page experience" id="experiences">
       <ExperiencesText />
-      <Reorder.Group
-        className="scroller"
-        as="ul"
-        axis="x"
-        onReorder={setJobs}
-        values={jobs}
-      >
-        <AnimatePresence initial={false}>
-          {jobs.map((job) => (
-            <Reorder.Item
-              key={job.title}
-              value={job}
-              id={job.date}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              dragListener={false}
-            >
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300, damping: 40 }}
-                whileTap={{ scale: 0.9 }}
-                className={`job ${job === selectedJob ? "selected" : ""}`}
-                onClick={() => {
-                  handleJobClick(job);
-                }}
+      <div className="center-scroller">
+        <Reorder.Group
+          className="scroller"
+          id="scroller"
+          as="ul"
+          axis="x"
+          onReorder={setJobs}
+          values={jobs}
+          ref={scrollerRef}
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart}
+          style={{ cursor: "grab" }}
+        >
+          <AnimatePresence>
+            {jobs.map((job) => (
+              <Reorder.Item
+                key={job.title}
+                value={job}
+                id={job.date}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                dragListener={false}
               >
-                <Image
-                  src={job.imgSrc}
-                  alt="hasbro"
-                  width={50}
-                  height={50}
-                  className="rounded"
-                />
-                <div>{job.title}</div>
-              </motion.button>
-            </Reorder.Item>
-          ))}
-        </AnimatePresence>
-      </Reorder.Group>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 40 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={`job ${job === selectedJob ? "selected" : ""}`}
+                  onClick={() => {
+                    handleJobClick(job);
+                  }}
+                >
+                  <Image
+                    src={job.imgSrc}
+                    alt="hasbro"
+                    width={50}
+                    height={50}
+                    className="rounded"
+                  />
+                  <div>{job.title}</div>
+                </motion.button>
+              </Reorder.Item>
+            ))}
+          </AnimatePresence>
+        </Reorder.Group>
+      </div>
       <AnimatePresence mode="wait">
         <motion.div
           className="selected-job-description"

@@ -14,7 +14,7 @@ const BG0 = ({ scrollProgress }: BGProps) => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0 }}
       preserveAspectRatio={"xMaxYMin slice"}
-      style={{ y: useTransform(scrollProgress, [0, 1], ["60%", "0%"]) }}
+      style={{ y: useTransform(scrollProgress, [0, 1], ["87%", "0%"]) }}
     >
       <title>0</title>
       <g id="e4d24abb-8e68-4087-b26e-7950942e77bc" data-name="Layer 2">
@@ -42,7 +42,7 @@ const BG1 = ({ scrollProgress }: BGProps) => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.2 }}
       preserveAspectRatio={"xMaxYMin slice"}
-      style={{ y: useTransform(scrollProgress, [0, 1], ["20%", "0%"]) }}
+      style={{ y: useTransform(scrollProgress, [0, 1], ["40%", "0%"]) }}
     >
       <title>1</title>
       <g id="b43d5a19-966f-4b32-a512-2f73a3c2c798" data-name="Layer 2">
@@ -69,7 +69,7 @@ const BG2 = ({ scrollProgress }: BGProps) => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.4 }}
       preserveAspectRatio={"xMaxYMin slice"}
-      style={{ y: useTransform(scrollProgress, [0, 1], ["5%", "0%"]) }}
+      style={{ y: useTransform(scrollProgress, [0, 1], ["20%", "0%"]) }}
     >
       <title>2</title>
       <g id="bd8dbd6b-d287-4b68-a59e-dabe4fb41009" data-name="Layer 2">
@@ -97,7 +97,7 @@ const BG3 = ({ scrollProgress }: BGProps) => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1, delay: 0.6 }}
       preserveAspectRatio={"xMaxYMin slice"}
-      style={{ y: useTransform(scrollProgress, [0, 1], ["1%", "0%"]) }}
+      style={{ y: useTransform(scrollProgress, [0, 1], ["5%", "0%"]) }}
     >
       <title>3</title>
       <g id="e58d9129-a0c1-4f96-9b95-821975b35825" data-name="Layer 2">

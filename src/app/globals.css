@@ -101,7 +101,11 @@ span {
 .experiences-text {
   font-weight: 500;
   font-size: 5rem;
+  color: #BCF8EC;
+  z-index: 100;
 }
+
+
 .experience {
   display: flex;
   flex-direction: column;
@@ -110,20 +114,42 @@ span {
   justify-content: center;
 }
 
+.center-scroller {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 90%;
+}
+
 .scroller {
+  z-index: 10;
   display: flex;
   gap: 1rem;
-  max-width: 100%;
+  max-width: 90%;
+  padding: 0 20px;
   list-style-type: none;
-  justify-content: center; 
+  align-items: center;
   flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: visible;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  height:calc(100% + 4px);
+  -webkit-mask-image: linear-gradient(to right, #000 90%, #0000);
+  mask-image: linear-gradient(to right,#0000 0%, 2%, #000 5%, 98%, #0000 100%);
 }
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+
 .job {
   font-size: 1.1rem;
   padding: 0.6rem 2rem;
   border: none;
   /* outline: none; */
-  color: rgb(255, 255, 255);
+  color: #BCF8EC;
   background: #111;
   cursor: pointer;
   position: relative;
@@ -134,7 +160,11 @@ span {
   touch-action: manipulation;
   display: flex;
   align-items: center;
+  width: fit-content;
+  height: 95%;
+  margin: 1rem 0 1rem;
   /* transition: 1s; */
+
 }
 
 .rounded {
@@ -143,6 +173,11 @@ span {
   height: 50px;
   width: 50px;
   margin-right: 15px;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .selected-job-description {
@@ -159,7 +194,7 @@ span {
   padding: 0.6rem 2rem;
   border: none;
   outline: none;
-  color: rgb(255, 255, 255);
+  color: #BCF8EC;
   background: #111;
   cursor: pointer;
   position: relative;
