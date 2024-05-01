@@ -3,7 +3,6 @@ import { AnimatePresence, Reorder, motion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import ExperiencesText from "./ExperiencesText";
-
 interface Job {
   title: string;
   company: string;
@@ -192,6 +191,7 @@ export default function ExperienceScroller() {
                   }}
                 >
                   <Image
+                    draggable={false}
                     src={job.imgSrc}
                     alt="hasbro"
                     width={50}
@@ -212,7 +212,6 @@ export default function ExperienceScroller() {
           initial={{
             opacity: 0,
             y: -20,
-            zIndex: 95,
           }}
           animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
           exit={{ opacity: 0, y: 20 }}
@@ -221,6 +220,15 @@ export default function ExperienceScroller() {
           {selectedJob.description}
         </motion.div>
       </AnimatePresence>
+      <motion.div>
+        <a
+          href="../downloads/ChrisTengResumeFINAL.pdf"
+          download
+          className="socials"
+        >
+          Download My Resume!
+        </a>
+      </motion.div>
     </div>
   );
 }

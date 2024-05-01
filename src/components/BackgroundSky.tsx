@@ -16,8 +16,7 @@ const Name = () => {
 export default function BackgroundSky() {
   return (
     <div className="background-sky-container">
-      <RightStars />
-      <LeftStars />
+      <Name />
     </div>
   );
 }

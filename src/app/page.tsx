@@ -10,6 +10,7 @@ import {
   MotionConfig,
 } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type MenuItemsProps = {
   onClick: () => void;
@@ -70,6 +71,38 @@ const MenuItems = ({ onClick }: MenuItemsProps) => {
         transition={{ duration: isPresent ? 0.3 : 0.7, ease: "easeInOut" }}
         onClick={onClick}
       ></motion.div>
+      <a href="https://github.com/ch-teng" target="_blank">
+        <motion.div
+          className="socials github"
+          initial={{ opacity: 0, x: "-4rem" }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: "-4rem" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <Image
+            src="/github-mark.svg"
+            alt="github logo"
+            height={40}
+            width={40}
+          />
+        </motion.div>
+      </a>
+      <a href="https://www.linkedin.com/in/ch-teng" target="_blank">
+        <motion.div
+          className="socials linkedin"
+          initial={{ opacity: 0, x: "-9rem" }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: "-9rem" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <Image
+            src="/In-White-48.png"
+            alt="LinkedIn logo"
+            height={32}
+            width={32}
+          />
+        </motion.div>
+      </a>
       <motion.ul
         key="menu"
         initial={{ left: "-50rem" }}
