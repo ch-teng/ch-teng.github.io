@@ -87,6 +87,11 @@ export default function ExperienceScroller() {
     const temp = removeItem(jobs, job);
     setJobs([job, ...temp]);
   };
+
+  const handleOrderChron = () => {
+    setJobs(experience);
+    setSelectedJob(experience[0]);
+  };
   const scrollerRef = useRef<HTMLDivElement>(null);
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     const ele = scrollerRef.current;
@@ -157,6 +162,13 @@ export default function ExperienceScroller() {
   return (
     <div className="page experience" id="experiences">
       <ExperiencesText />
+      <motion.div
+        onClick={handleOrderChron}
+        className="orderButton"
+        whileHover={{ scale: 1.1 }}
+      >
+        Order from Most Recent
+      </motion.div>
       <div className="center-scroller">
         <Reorder.Group
           className="scroller"
@@ -213,7 +225,7 @@ export default function ExperienceScroller() {
             opacity: 0,
             y: -20,
           }}
-          animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.15 }}
         >

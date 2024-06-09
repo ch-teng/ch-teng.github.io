@@ -103,6 +103,17 @@ const MenuItems = ({ onClick }: MenuItemsProps) => {
           />
         </motion.div>
       </a>
+      <a href="mailto:chris.r.teng@gmail.com" target="_blank">
+        <motion.div
+          className="socials email"
+          initial={{ opacity: 0, x: "-14rem" }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: "-14rem" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <Image src="/email.png" alt="LinkedIn logo" height={50} width={50} />
+        </motion.div>
+      </a>
       <motion.ul
         key="menu"
         initial={{ left: "-50rem" }}
