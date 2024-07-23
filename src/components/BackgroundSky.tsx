@@ -1,52 +1,51 @@
 import React from "react";
-import { delay, easeOut, motion } from "framer-motion";
+import { delay, easeIn, easeOut, motion } from "framer-motion";
 
 const Name = () => {
   const firstNameContainer = {
-    hidden: { opacity: 0, y: "100%" },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delayChildren: 1.5,
-        staggerChildren: 0.1,
-      },
+    hidden: {
+      opacity: 0,
+      y: "20%",
     },
-  };
-  const lastNameContainer = {
-    hidden: { opacity: 0, y: "100%" },
     show: {
       opacity: 1,
       y: 0,
-      transition: {
-        delayChildren: 2.0,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-  const item = {
-    hidden: { opacity: 0, y: "200%" },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3, type: "tween", ease: easeOut },
+      transition: { delay: 2, duration: 0.5, ease: easeOut },
     },
   };
   return (
-    <div className="name">
-      <motion.h1 variants={firstNameContainer} initial="hidden" animate="show">
-        <motion.span variants={item}>C</motion.span>
-        <motion.span variants={item}>h</motion.span>
-        <motion.span variants={item}>r</motion.span>
-        <motion.span variants={item}>i</motion.span>
-        <motion.span variants={item}>s</motion.span>
-      </motion.h1>
-      <motion.h1 variants={lastNameContainer} initial="hidden" animate="show">
-        <motion.span variants={item}>T</motion.span>
-        <motion.span variants={item}>e</motion.span>
-        <motion.span variants={item}>n</motion.span>
-        <motion.span variants={item}>g</motion.span>
-      </motion.h1>
+    <div className="name-container">
+      <div className="name">
+        <motion.h1
+          variants={firstNameContainer}
+          initial="hidden"
+          animate="show"
+        >
+          Chris
+        </motion.h1>
+        <motion.h1
+          variants={firstNameContainer}
+          initial="hidden"
+          animate="show"
+        >
+          Teng
+        </motion.h1>
+      </div>
+      <div className="self-info">
+        <div className="picture">
+          {/* <img
+            src="https://avatars.githubusercontent.com/u/58990613?v=4"
+            alt="Chris Teng"
+          /> */}
+        </div>
+        <div className="elev-pitch">
+          <p>
+            I am a full-stack developer with a passion for creating beautiful
+            and functional web applications. I am always looking for new
+            challenges and opportunities to learn and grow.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

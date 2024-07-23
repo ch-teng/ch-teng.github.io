@@ -161,10 +161,10 @@ const MenuItems = ({ onClick }: MenuItemsProps) => {
           <motion.li
             whileHover={{ scale: 1.3 }}
             whileTap={{ scale: 1 }}
-            className="#hobbies"
+            className="#skills"
             onMouseDown={handleScroll}
           >
-            Hobbies
+            Skills
           </motion.li>
         </MotionConfig>
       </motion.ul>
@@ -226,7 +226,7 @@ export default function Home() {
       <Whoami></Whoami>
       <ExperienceScroller />
       <div className="page PersonalProjects" id="personal-projects"></div>
-      <div className="page Hobbies" id="hobbies"></div>
+      <div className="page Skills" id="skills"></div>
     </body>
   );
 }
