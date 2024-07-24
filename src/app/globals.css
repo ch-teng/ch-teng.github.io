@@ -128,15 +128,15 @@ span {
   height: 100vh;
 }
 
-.experiences-text {
+.slide-text {
   font-weight: 500;
   font-size: 5rem;
   color: #BCF8EC;
-  z-index: 100;
+  z-index: 2;
 }
 
 
-.experience {
+.center-page {
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -152,6 +152,10 @@ span {
   max-width: 90%;
 }
 
+.skills {
+  justify-content: start;
+  height:150vh
+}
 .scroller {
   z-index: 10;
   display: flex;
@@ -387,4 +391,28 @@ span {
   margin: 0;
   padding: 0;
 
+}
+
+
+.skill {
+  display: flex;
+  align-items: center;
+}
+
+.skill-name {
+  margin: 0;
+  font-weight: bold;
+  
+}
+.skill-desc {
+  margin: 0;
+}
+
+.scrollBody {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
 }

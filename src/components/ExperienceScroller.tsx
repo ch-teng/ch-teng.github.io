@@ -2,7 +2,7 @@ import { removeItem } from "@/utils/array-utils";
 import { AnimatePresence, Reorder, motion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
-import ExperiencesText from "./ExperiencesText";
+import { SlideText } from "./SlideText";
 interface Job {
   title: string;
   company: string;
@@ -160,8 +160,8 @@ export default function ExperienceScroller() {
   };
 
   return (
-    <div className="page experience" id="experiences">
-      <ExperiencesText />
+    <div className="page center-page" id="experiences">
+      <SlideText word="Experiences" />
       <motion.div
         onClick={handleOrderChron}
         className="orderButton"

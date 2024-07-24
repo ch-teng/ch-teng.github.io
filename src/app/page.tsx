@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Skills from "@/components/Skills";
 
 type MenuItemsProps = {
   onClick: () => void;
@@ -226,7 +227,7 @@ export default function Home() {
       <Whoami></Whoami>
       <ExperienceScroller />
       <div className="page PersonalProjects" id="personal-projects"></div>
-      <div className="page Skills" id="skills"></div>
+      <Skills />
     </body>
   );
 }

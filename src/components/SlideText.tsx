@@ -3,11 +3,12 @@ import { motion, stagger, useAnimate, useInView } from "framer-motion";
 
 type slideTextProps = {
   word: string;
+  onLoadOnly?: boolean;
 };
 
-const SlideText = ({ word }: slideTextProps) => {
+export const SlideText = ({ word, onLoadOnly }: slideTextProps) => {
   const [scope, animate] = useAnimate();
-  const isInView = useInView(scope, { once: true });
+  const isInView = useInView(scope, { once: onLoadOnly });
   useEffect(() => {
     if (isInView) {
       animate(
@@ -18,14 +19,10 @@ const SlideText = ({ word }: slideTextProps) => {
     }
   }, [isInView]);
   return (
-    <motion.div ref={scope} className="experiences-text">
+    <motion.div ref={scope} className="slide-text">
       {word.split("").map((letter, index) => (
         <motion.span key={index}>{letter}</motion.span>
       ))}
     </motion.div>
   );
 };
-
-export default function ExperiencesText() {
-  return <SlideText word="Experiences" />;
-}
