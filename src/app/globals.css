@@ -154,7 +154,7 @@ span {
 
 .skills {
   justify-content: start;
-  height:150vh
+  height: fit-content
 }
 .scroller {
   z-index: 10;
@@ -393,7 +393,6 @@ span {
 
 }
 
-
 .skill {
   display: flex;
   align-items: center;
@@ -402,7 +401,7 @@ span {
 .skill-name {
   margin: 0;
   font-weight: bold;
-  
+  overflow: hidden;
 }
 .skill-desc {
   margin: 0;
@@ -412,7 +411,68 @@ span {
   width: 100vw;
   position: fixed;
   top: 0;
-
   display: flex;
   flex-direction: column;
+}
+
+
+.footer {
+  width: 100vw;
+  height: 20vh;
+  background: #BCF8EC;
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.background-above-footer {
+  background: #0a132b;
+}
+.wave {
+  width: 200%;
+  height: 20vh;
+  overflow: hidden;
+  background: #BCF8EC;
+  clip-path: polygon(100% 100%, 0% 100% , 0.00% 61.67%, 2.00% 60.85%, 4.00% 58.50%, 6.00% 54.97%, 8.00% 50.73%, 10.00% 46.39%, 12.00% 42.56%, 14.00% 39.78%, 16.00% 38.43%, 18.00% 38.70%, 20.00% 40.56%, 22.00% 43.75%, 24.00% 47.81%, 26.00% 52.19%, 28.00% 56.25%, 30.00% 59.44%, 32.00% 61.30%, 34.00% 61.57%, 36.00% 60.22%, 38.00% 57.44%, 40.00% 53.61%, 42.00% 49.27%, 44.00% 45.03%, 46.00% 41.50%, 48.00% 39.15%, 50.00% 38.33%, 52.00% 39.15%, 54.00% 41.50%, 56.00% 45.03%, 58.00% 49.27%, 60.00% 53.61%, 62.00% 57.44%, 64.00% 60.22%, 66.00% 61.57%, 68.00% 61.30%, 70.00% 59.44%, 72.00% 56.25%, 74.00% 52.19%, 76.00% 47.81%, 78.00% 43.75%, 80.00% 40.56%, 82.00% 38.70%, 84.00% 38.43%, 86.00% 39.78%, 88.00% 42.56%, 90.00% 46.39%, 92.00% 50.73%, 94.00% 54.97%, 96.00% 58.50%, 98.00% 60.85%, 100.00% 61.67%);
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: fit-content;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.section {
+  font-size: 1.25rem;
+}
+
+
+.list-item {
+  list-style: none;
+  padding: 0 10px;
+}
+
+.list-item:hover {
+  cursor: pointer;
+}
+
+.line {
+  height:1px;
+  width: 20vw;
+  background: #0A132B;
+  content: "";
+}
+
+.footer-text {
+  opacity: .7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

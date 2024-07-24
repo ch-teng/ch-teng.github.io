@@ -62,7 +62,7 @@ export default function Skills() {
   return (
     <div className="page center-page skills" id="skills">
       <SlideText word="Skills" onLoadOnly={true} />
-      <div className="skills-container" style={{ paddingBottom: "50vh" }}>
+      <div className="skills-container" style={{ paddingBottom: "25vh" }}>
         {skillsList.map((skill, index) => (
           <div className="skill" key={index}>
             <SkillCard skill={skill} />

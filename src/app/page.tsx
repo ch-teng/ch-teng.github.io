@@ -12,6 +12,7 @@ import {
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Skills from "@/components/Skills";
+import Footer from "@/components/Footer";
 
 type MenuItemsProps = {
   onClick: () => void;
@@ -228,6 +229,7 @@ export default function Home() {
       <ExperienceScroller />
       <div className="page PersonalProjects" id="personal-projects"></div>
       <Skills />
+      <Footer />
     </body>
   );
 }
