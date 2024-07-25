@@ -80,7 +80,7 @@ const experience = [
   },
 ];
 
-export default function ExperienceScroller() {
+export default function Experiences() {
   const [jobs, setJobs] = useState(experience);
   const [selectedJob, setSelectedJob] = useState(jobs[0]);
   const handleJobClick = (job: Job) => {
