@@ -186,6 +186,15 @@ span {
   display: none;
 }
 
+.exp-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0;
+  width: 80%;
+
+}
+
 
 .job {
   font-size: 1.1rem;
@@ -203,13 +212,15 @@ span {
   touch-action: manipulation;
   display: flex;
   align-items: center;
-  width: fit-content;
+  width: max-content;
   height: 95%;
   margin: 1rem 0 1rem;
   /* transition: 1s; */
-
 }
-.orderButton:hover {
+.exp-option-button ~ .job {
+  color: white;
+}
+.order-button:hover {
   cursor: pointer;
 }
 

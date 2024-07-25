@@ -164,13 +164,24 @@ export default function Experiences() {
     <div className="page center-page experiences" id="experiences">
       <Wave belowColor="#25455F" aboveColor="#0A132B" />
       <SlideText word="Experiences" />
-      <motion.div
-        onClick={handleOrderChron}
-        className="orderButton"
-        whileHover={{ scale: 1.1 }}
-      >
-        Order from Most Recent
-      </motion.div>
+      <div className="exp-options">
+        <motion.div
+          onClick={handleOrderChron}
+          className="exp-option-button job"
+          whileHover={{ scale: 1.1 }}
+        >
+          Order from most recent
+        </motion.div>
+        <motion.div
+          className="exp-option-button job"
+          whileHover={{ scale: 1.1 }}
+        >
+          <a href="/ChrisTengResume.pdf" download="ChrisTengResume">
+            Download My Resume!
+          </a>
+        </motion.div>
+      </div>
+
       <div className="center-scroller">
         <Reorder.Group
           className="scroller"
@@ -234,15 +245,6 @@ export default function Experiences() {
           {selectedJob.description}
         </motion.div>
       </AnimatePresence>
-      <motion.div>
-        <a
-          href="../downloads/ChrisTengResumeFINAL.pdf"
-          download
-          className="socials"
-        >
-          Download My Resume!
-        </a>
-      </motion.div>
     </div>
   );
 }
