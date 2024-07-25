@@ -11,8 +11,10 @@ export default function Footer() {
   };
 
   return (
-    <div className="background-above-footer">
-      <Wave background="#BCF8EC" />
+    <>
+      <div className="background-above-footer">
+        <Wave belowColor="#BCF8EC" aboveColor="#0A132B" />
+      </div>
       <footer className="footer">
         <ul className="section list">
           <motion.li
@@ -26,21 +28,21 @@ export default function Footer() {
           </motion.li>
           <motion.li
             className="section list-item"
+            id="#about"
+            onClick={handleScroll}
+            whileHover={{ y: -10 }}
+            transition={{ type: "spring", damping: 10 }}
+          >
+            About
+          </motion.li>
+          <motion.li
+            className="section list-item"
             id="#experiences"
             onClick={handleScroll}
             whileHover={{ y: -10 }}
             transition={{ type: "spring", damping: 10 }}
           >
             Experiences
-          </motion.li>
-          <motion.li
-            className="section list-item"
-            id="#personal-projects"
-            onClick={handleScroll}
-            whileHover={{ y: -10 }}
-            transition={{ type: "spring", damping: 10 }}
-          >
-            Projects
           </motion.li>
           <motion.li
             className="section list-item"
@@ -86,6 +88,6 @@ export default function Footer() {
           Designed lovingly by Chris Teng | &copy; 2024
         </p>
       </footer>
-    </div>
+    </>
   );
 }

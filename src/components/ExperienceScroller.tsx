@@ -3,6 +3,7 @@ import { AnimatePresence, Reorder, motion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { SlideText } from "./SlideText";
+import Wave from "./Wave";
 interface Job {
   title: string;
   company: string;
@@ -160,7 +161,8 @@ export default function ExperienceScroller() {
   };
 
   return (
-    <div className="page center-page" id="experiences">
+    <div className="page center-page experiences" id="experiences">
+      <Wave belowColor="#25455F" aboveColor="#0A132B" />
       <SlideText word="Experiences" />
       <motion.div
         onClick={handleOrderChron}

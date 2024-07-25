@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Skills from "@/components/Skills";
 import Footer from "@/components/Footer";
+import About from "@/components/About";
 
 type MenuItemsProps = {
   onClick: () => void;
@@ -82,7 +83,7 @@ const MenuItems = ({ onClick }: MenuItemsProps) => {
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           <Image
-            src="/github-mark.svg"
+            src="/skillspng/github-mark-white.png"
             alt="github logo"
             height={40}
             width={40}
@@ -113,7 +114,12 @@ const MenuItems = ({ onClick }: MenuItemsProps) => {
           exit={{ opacity: 0, x: "-14rem" }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <Image src="/email.png" alt="LinkedIn logo" height={50} width={50} />
+          <Image
+            src="/email-01.png"
+            alt="LinkedIn logo"
+            height={50}
+            width={50}
+          />
         </motion.div>
       </a>
       <motion.ul
@@ -147,18 +153,18 @@ const MenuItems = ({ onClick }: MenuItemsProps) => {
           <motion.li
             whileHover={{ scale: 1.3 }}
             whileTap={{ scale: 1 }}
-            className="#experiences"
+            className="#about"
             onMouseDown={handleScroll}
           >
-            Experiences
+            About
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.3 }}
             whileTap={{ scale: 1 }}
-            className="#personal-projects"
+            className="#experiences"
             onMouseDown={handleScroll}
           >
-            Personal Projects
+            Experiences
           </motion.li>
           <motion.li
             whileHover={{ scale: 1.3 }}
@@ -226,8 +232,8 @@ export default function Home() {
         </AnimatePresence>
       </div>
       <Whoami></Whoami>
+      <About />
       <ExperienceScroller />
-      <div className="page PersonalProjects" id="personal-projects"></div>
       <Skills />
       <Footer />
     </body>

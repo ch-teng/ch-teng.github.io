@@ -13,7 +13,7 @@ export const SlideText = ({ word, onLoadOnly }: slideTextProps) => {
     if (isInView) {
       animate(
         "span",
-        { opacity: [0, 1], y: ["100%", "0%"] },
+        { opacity: [0, 1], y: ["20%", "0%"] },
         { delay: stagger(0.05), duration: 1, type: "spring" }
       );
     }

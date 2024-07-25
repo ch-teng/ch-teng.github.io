@@ -1,6 +1,10 @@
 :root {
   color-scheme: dark;
-
+  --primary: #BCF8EC;
+  --secondary: #7CBAC0;
+  --tertiary: #25455F;
+  --quad: #183146;
+  --quint: #0A132B;
 }
 
 Link {
@@ -73,7 +77,7 @@ span {
 }
 
 .hamburg {
-  background: #BCF8EC;
+  background: var(--primary);
   height: .5rem;
   width: 2rem;
   border-radius: .4rem;
@@ -121,17 +125,18 @@ span {
   z-index: 89;
 }
 .page {
-  background: #0a132b;
+  background: var(--quint);
   top: 0;
   left: 0;
   width: 99vw;
-  height: 100vh;
+  height: fit-content;
+  min-height: 80vh;
 }
 
 .slide-text {
   font-weight: 500;
   font-size: 5rem;
-  color: #BCF8EC;
+  color: inherit;
   z-index: 2;
 }
 
@@ -141,7 +146,11 @@ span {
   flex-direction: column;
   list-style-type: none;
   align-items: center;
-  justify-content: center;
+}
+
+.experiences {
+  color: var(--primary);
+  background: var(--tertiary);
 }
 
 .center-scroller {
@@ -171,7 +180,7 @@ span {
   scrollbar-width: none;
   height:calc(100% + 4px);
   -webkit-mask-image: linear-gradient(to right, #000 90%, #0000);
-  mask-image: linear-gradient(to right,#0000 0%, 2%, #000 5%, 98%, #0000 100%);
+  mask-image: linear-gradient(to right,#0000 0%, 0.5%, #000 5%, 98%, #0000 100%);
 }
 .scroller::-webkit-scrollbar {
   display: none;
@@ -183,7 +192,7 @@ span {
   padding: 0.6rem 2rem;
   border: none;
   /* outline: none; */
-  color: #BCF8EC;
+  color: var(--primary);
   background: #111;
   cursor: pointer;
   position: relative;
@@ -234,7 +243,7 @@ span {
   padding: 0.6rem 2rem;
   border: none;
   outline: none;
-  color: #BCF8EC;
+  color: var(--primary);
   background: #111;
   cursor: pointer;
   position: relative;
@@ -265,8 +274,6 @@ span {
   left: -2px;
   background-size: 400%;
   z-index: -1;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   animation: glowing-button 20s linear infinite;
@@ -305,7 +312,7 @@ span {
   flex-direction: row;
   align-items: start;
   justify-content: center;
-  height: 130vh;
+  height: 160vh;
 }
 
 .backgroundContainer {
@@ -330,13 +337,13 @@ span {
   stroke: none;
 }
 .b4 {
-  fill: #BCF8EC;
+  fill: var(--primary);
   height: 100%;
   width: 150%;
 
 }
 .b3 {
-  fill: #7CBAC0;
+  fill: var(--secondary);
   height: 100%;
   width: 130%;
 }
@@ -347,13 +354,13 @@ span {
 
 }
 .b1 {
-  fill: #183146;
+  fill: var(--quad);
   height: 75%;
   width: 120%;
 
 }
 .b0 {
-  fill: #0A132B;
+  fill: var(--quint);
   height: 65%;
   width: 120%;
 }
@@ -423,24 +430,24 @@ span {
 .footer {
   width: 100vw;
   height: 20vh;
-  background: #BCF8EC;
+  background: var(--primary);
   color: black;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.background-above-footer {
-  background: #0a132b;
+.background-wave {
+  height: 19vh;
 }
 .wave {
-  width: 200%;
+  width: 300vw;
   height: 20vh;
+  position: relative;
   overflow: hidden;
-  background: #BCF8EC;
-  clip-path: polygon(100% 100%, 0% 100% , 0.00% 61.67%, 2.00% 60.85%, 4.00% 58.50%, 6.00% 54.97%, 8.00% 50.73%, 10.00% 46.39%, 12.00% 42.56%, 14.00% 39.78%, 16.00% 38.43%, 18.00% 38.70%, 20.00% 40.56%, 22.00% 43.75%, 24.00% 47.81%, 26.00% 52.19%, 28.00% 56.25%, 30.00% 59.44%, 32.00% 61.30%, 34.00% 61.57%, 36.00% 60.22%, 38.00% 57.44%, 40.00% 53.61%, 42.00% 49.27%, 44.00% 45.03%, 46.00% 41.50%, 48.00% 39.15%, 50.00% 38.33%, 52.00% 39.15%, 54.00% 41.50%, 56.00% 45.03%, 58.00% 49.27%, 60.00% 53.61%, 62.00% 57.44%, 64.00% 60.22%, 66.00% 61.57%, 68.00% 61.30%, 70.00% 59.44%, 72.00% 56.25%, 74.00% 52.19%, 76.00% 47.81%, 78.00% 43.75%, 80.00% 40.56%, 82.00% 38.70%, 84.00% 38.43%, 86.00% 39.78%, 88.00% 42.56%, 90.00% 46.39%, 92.00% 50.73%, 94.00% 54.97%, 96.00% 58.50%, 98.00% 60.85%, 100.00% 61.67%);
+  background: var(--primary);
+  clip-path: polygon(100% 100%, 0% 100% , 0.00% 73.33%, 2.00% 71.69%, 4.00% 67.01%, 6.00% 59.93%, 8.00% 51.47%, 10.00% 42.79%, 12.00% 35.13%, 14.00% 29.55%, 16.00% 26.85%, 18.00% 27.40%, 20.00% 31.12%, 22.00% 37.50%, 24.00% 45.63%, 26.00% 54.37%, 28.00% 62.50%, 30.00% 68.88%, 32.00% 72.60%, 34.00% 73.15%, 36.00% 70.45%, 38.00% 64.87%, 40.00% 57.21%, 42.00% 48.53%, 44.00% 40.07%, 46.00% 32.99%, 48.00% 28.31%, 50.00% 26.67%, 52.00% 28.31%, 54.00% 32.99%, 56.00% 40.07%, 58.00% 48.53%, 60.00% 57.21%, 62.00% 64.87%, 64.00% 70.45%, 66.00% 73.15%, 68.00% 72.60%, 70.00% 68.88%, 72.00% 62.50%, 74.00% 54.37%, 76.00% 45.63%, 78.00% 37.50%, 80.00% 31.12%, 82.00% 27.40%, 84.00% 26.85%, 86.00% 29.55%, 88.00% 35.13%, 90.00% 42.79%, 92.00% 51.47%, 94.00% 59.93%, 96.00% 67.01%, 98.00% 71.69%, 100.00% 73.33%);
 }
-
 .list {
   display: flex;
   justify-content: center;
@@ -468,7 +475,7 @@ span {
 .line {
   height:1px;
   width: 20vw;
-  background: #0A132B;
+  background: var(--quint);
   content: "";
 }
 

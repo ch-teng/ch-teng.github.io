@@ -10,9 +10,9 @@ const BG0 = ({ scrollProgress }: BGProps) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1921 246.33"
       className="hill-holder b0"
-      initial={{ y: "100rem", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0, type: "spring", damping: 1000, mass: 0.5 }}
+      initial={{ x: "100rem", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1, delay: 0 }}
       preserveAspectRatio={"xMaxYMin slice"}
       style={{ y: useTransform(scrollProgress, [0, 1], ["87%", "0%"]) }}
     >
@@ -34,9 +34,9 @@ const BG1 = ({ scrollProgress }: BGProps) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1921 391.5"
       className="hill-holder b1"
-      initial={{ y: "100rem", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.2, type: "spring", damping: 10 }}
+      initial={{ x: "-100rem", opacity: 0 }}
+      animate={{ x: 0, opacity: 0.9 }}
+      transition={{ duration: 1, delay: 0.2 }}
       preserveAspectRatio={"xMaxYMin slice"}
       style={{ y: useTransform(scrollProgress, [0, 1], ["40%", "0%"]) }}
     >
@@ -57,8 +57,8 @@ const BG2 = ({ scrollProgress }: BGProps) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1921 432.24"
       className="hill-holder b2"
-      initial={{ y: "100rem", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={{ x: "100%", opacity: 0 }}
+      animate={{ x: 0, opacity: 0.7 }}
       transition={{ duration: 1, delay: 0.4 }}
       preserveAspectRatio={"xMaxYMin slice"}
       style={{ y: useTransform(scrollProgress, [0, 1], ["20%", "0%"]) }}
@@ -81,14 +81,9 @@ const BG3 = ({ scrollProgress }: BGProps) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1921 557.76"
       className="hill-holder b3"
-      initial={{ y: "100rem", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        duration: 1,
-        delay: 0.6,
-        type: "spring",
-        mass: 0.1,
-      }}
+      initial={{ opacity: 0, x: "-100rem" }}
+      animate={{ x: 0, opacity: 0.8 }}
+      transition={{ duration: 1, delay: 0.6 }}
       preserveAspectRatio={"xMaxYMin slice"}
       style={{ y: useTransform(scrollProgress, [0, 1], ["5%", "0%"]) }}
     >
@@ -110,9 +105,9 @@ const BG4 = () => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1921 527.7"
       className="hill-holder b4"
-      initial={{ y: "10rem", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.8, type: "spring", mass: 0.1, duration: 1 }}
+      initial={{ x: "100%", opacity: 0 }}
+      animate={{ x: 0, opacity: 0.5 }}
+      transition={{ duration: 1, delay: 0.8 }}
       preserveAspectRatio={"xMaxYMin slice"}
     >
       <title>4</title>
