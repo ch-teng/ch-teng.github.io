@@ -1,12 +1,6 @@
 import Image from "next/image";
 import { SlideText } from "./SlideText";
-import {
-  motion,
-  MotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 type Skill = {
@@ -23,34 +17,46 @@ const skillsList: Skill[] = [
       "JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.",
   },
   {
-    imgsrc: "/javascript-logo-0.png",
-    name: "JavaScript",
+    imgsrc: "/skillspng/ts-logo-256.png",
+    name: "TypeScript",
     description:
-      "JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.",
+      "JavaScript...but with types! TypeScript is a superset of JavaScript that adds static types to the language.",
   },
   {
-    imgsrc: "/skillspng/javascript-logo-0.png",
-    name: "JavaScript",
+    imgsrc: "/skillspng/jsIconGreen.svg",
+    name: "Node.js",
     description:
-      "JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.",
+      "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It is used for building server-side applications.",
   },
   {
-    imgsrc: "/javascript-logo-0.png",
-    name: "JavaScript",
+    imgsrc: "/skillspng/next-js-logo.png",
+    name: "Next.js",
     description:
-      "JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.",
+      "Next.js is a React framework that enables functionality such as server-side rendering and generating static websites for React applications.",
   },
   {
-    imgsrc: "/skillspng/javascript-logo-0.png",
-    name: "JavaScript",
+    imgsrc: "/skillspng/GraphQLLogoWhite.png",
+    name: "GraphQL",
     description:
-      "JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.",
+      "GraphQL is a query language for APIs and a runtime for executing those queries by using a type system you define for your data.",
   },
   {
-    imgsrc: "/javascript-logo-0.png",
-    name: "JavaScript",
+    imgsrc: "/skillspng/SpringBoot-01.png",
+    name: "Spring Boot and MVC",
     description:
-      "JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.",
+      "Spring Boot is an open-source Java-based framework used to create microservices. Spring MVC is a model-view-controller framework for Java.",
+  },
+  {
+    imgsrc: "/skillspng/HTML5.png",
+    name: "HTML5",
+    description:
+      "HTML5 is the latest version of Hypertext Markup Language, the code that describes web pages.",
+  },
+  {
+    imgsrc: "/skillspng/CSS3.png",
+    name: "CSS3",
+    description:
+      "CSS3 is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.",
   },
 ];
 
@@ -94,7 +100,7 @@ const SkillCard = ({ skill }: { skill: Skill }) => {
   return (
     <>
       <motion.p style={{ transform: transformLeft, opacity: p }} ref={itemsRef}>
-        <Image src={skill.imgsrc} alt={skill.name} width={75} height={75} />
+        <Image src={skill.imgsrc} alt={skill.name} width={60} height={60} />
       </motion.p>
       <motion.span
         className="skill-card"

@@ -20,7 +20,7 @@ export default function Footer() {
             id="#whoami"
             onClick={handleScroll}
             whileHover={{ y: -10 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: "spring", damping: 10 }}
           >
             Whoami
           </motion.li>
@@ -29,7 +29,7 @@ export default function Footer() {
             id="#experiences"
             onClick={handleScroll}
             whileHover={{ y: -10 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: "spring", damping: 10 }}
           >
             Experiences
           </motion.li>
@@ -38,7 +38,7 @@ export default function Footer() {
             id="#personal-projects"
             onClick={handleScroll}
             whileHover={{ y: -10 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: "spring", damping: 10 }}
           >
             Projects
           </motion.li>
@@ -47,7 +47,7 @@ export default function Footer() {
             id="#skills"
             onClick={handleScroll}
             whileHover={{ y: -10 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: "spring", damping: 10 }}
           >
             Skills
           </motion.li>

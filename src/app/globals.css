@@ -406,6 +406,10 @@ span {
 .skill-desc {
   margin: 0;
 }
+.skill-card {
+  margin: 10px;
+  max-width: 60vw;
+}
 
 .scrollBody {
   width: 100vw;
