@@ -19,10 +19,12 @@ export const Card = ({ imgSrc, imgDesc, description, sideInfo }: CardProps) => {
             fill={true}
           ></Image>
         </div>
-        <div className="card-description text-box">{description}</div>
+        <div className="card-description text-box">
+          {description.replaceAll("*", "\n")}
+        </div>
       </div>
       {sideInfo && (
-        <div className="card-description card-side-info">
+        <div className="card-description card-side-info text-box">
           {sideInfo.replaceAll(",", "\n")}
         </div>
       )}

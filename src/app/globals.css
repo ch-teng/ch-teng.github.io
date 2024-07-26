@@ -251,7 +251,7 @@ span {
   align-items: start;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .company-card {
@@ -308,7 +308,7 @@ span {
   font-size: 1.3rem;
 }
 
-.card-side-info {
+.text-box {
   white-space: pre-line;
 }
 

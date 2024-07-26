@@ -27,7 +27,7 @@ const experiences: Array<Job> = [
       "Priceline is a travel agency that offers discount rates for travel-related purchases such as airline tickets and hotel stays. Priceline is headquartered in Norwalk, Connecticut, United States and is wholly owned by Booking Holdings, which also owns Kayak.com, Booking.com and other sites.",
     companyImgSrc: "/priceline/Priceline-office.jpg",
     jobDescription:
-      "* Created new and innovative designs for post-booking and user profiles with NextJS and GraphQL" +
+      "Created new and innovative designs for post-booking and user profiles with NextJS and GraphQL" +
       "* Further developed CI/CD practices in all repositories to help create faster, cleaner deployments" +
       "* Converted and shifted repository structure from monolithic design to microservices to aid development" +
       "* Clarified user experience through several A/B tests that improved design decisions by 50%",
