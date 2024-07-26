@@ -130,7 +130,7 @@ span {
   left: 0;
   width: 99vw;
   height: fit-content;
-  min-height: 80vh;
+  min-height: 1080px;
 }
 
 .slide-text {
@@ -139,7 +139,6 @@ span {
   color: inherit;
   z-index: 2;
 }
-
 
 .center-page {
   display: flex;
@@ -151,6 +150,8 @@ span {
 .experiences {
   color: var(--primary);
   background: var(--tertiary);
+  min-height: 1080px;
+  height: fit-content;
 }
 
 .center-scroller {
@@ -163,7 +164,8 @@ span {
 
 .skills {
   justify-content: start;
-  height: fit-content
+  height: fit-content;
+  min-height: 1080px;
 }
 .scroller {
   z-index: 10;
@@ -192,7 +194,6 @@ span {
   gap: 1rem;
   margin: 1rem 0;
   width: 80%;
-
 }
 
 
@@ -217,7 +218,7 @@ span {
   margin: 1rem 0 1rem;
   /* transition: 1s; */
 }
-.exp-option-button ~ .job {
+.exp-options .exp-option-button {
   color: white;
 }
 .order-button:hover {
@@ -237,18 +238,79 @@ span {
   -ms-user-select: none;
 }
 
-.selected-job-description {
-  background: white;
-  color: black;
+.job-description {
+  /* background: black; */
+  color: white;
   padding: 1rem;
-  border-radius: 5rem;
   width: 80%;
+  max-width: 1532px;
+  min-height: 920px;
+  height: fit-content;
   z-index: 0;
   display: flex;
-  align-items: center;
-  
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
+.company-card {
+  width: 532px;
+  height: 100%;
+}
+
+.job-card {
+  width: 912px;
+  height: 100%;
+}
+
+.card {
+  background: var(--quint);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.75);
+  border-radius: 1rem;
+  outline: 3px solid white;
+  min-width: fit-content;
+  min-height: fit-content;
+}
+
+.card-main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  outline: 3px solid white;
+}
+
+.card-img-holder {
+  width: 100%;
+  min-width: 500px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem 1rem 0 0;
+  outline: 3px solid white;
+}
+
+.card-img {
+  object-fit: cover;
+}
+
+.card-description {
+  width: fit-content;
+  min-width: fit-content;
+  min-height: fit-content;
+  height: 60%;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.card-side-info {
+  white-space: pre-line;
+}
 
 .selected {
   padding: 0.6rem 2rem;

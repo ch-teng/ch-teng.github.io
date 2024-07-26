@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <body>
       <Hamburger />
-      <Whoami></Whoami>
+      <Whoami />
       <About />
       <Experiences />
       <Skills />

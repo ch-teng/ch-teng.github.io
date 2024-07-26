@@ -4,24 +4,42 @@ import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { SlideText } from "./SlideText";
 import Wave from "./Wave";
+import { JobDescription } from "./JobDescription";
 interface Job {
   title: string;
   company: string;
   date: string;
-  description: string;
-  imgSrc: string;
-  imgDesc: string;
+  logoImgSrc: string;
+  logoImgDesc: string;
+  technologies?: string;
+  companyDescription: string;
+  companyImgSrc: string;
+  jobDescription: string;
+  jobImgSrc: string;
 }
 
-const experience = [
+const experiences: Array<Job> = [
   {
     title: "Full Stack Developer Coop",
     company: "Priceline",
     date: "Jan 2021 - June 2021",
-    description: "Priceline Job",
-    imgSrc: "/priceline-logo.png",
-    imgDesc: "Priceline Logo",
+    companyDescription:
+      "Priceline is a travel agency that offers discount rates for travel-related purchases such as airline tickets and hotel stays. Priceline is headquartered in Norwalk, Connecticut, United States and is wholly owned by Booking Holdings, which also owns Kayak.com, Booking.com and other sites.",
+    companyImgSrc: "/priceline/Priceline-office.jpg",
+    jobDescription:
+      "* Created new and innovative designs for post-booking and user profiles with NextJS and GraphQL" +
+      "* Further developed CI/CD practices in all repositories to help create faster, cleaner deployments" +
+      "* Converted and shifted repository structure from monolithic design to microservices to aid development" +
+      "* Clarified user experience through several A/B tests that improved design decisions by 50%",
+    jobImgSrc: "/priceline/Priceline-website.png",
+    technologies:
+      "TypeScript, React, NextJS, NodeJS, GraphQL, SQL, Java, Jest, Mabl",
+    logoImgSrc: "/priceline/priceline-logo.png",
+    logoImgDesc: "Priceline Logo",
   },
+];
+
+/*
   {
     title: "Web Developer Coop",
     company: "TriNetX",
@@ -54,34 +72,10 @@ const experience = [
     imgSrc: "/Hasbro_logo_symbol.png",
     imgDesc: "Hasbro Logo",
   },
-  {
-    title: "Anothob",
-    company: "Hasbro",
-    date: "Jan 2021 - Juns1",
-    description: "lorem",
-    imgSrc: "/Hasbro_logo_symbol.png",
-    imgDesc: "Hasbro Logo",
-  },
-  {
-    title: "Another Job",
-    company: "Hasbro",
-    date: "Jan 2021 a 2021",
-    description: "lorem",
-    imgSrc: "/Hasbro_logo_symbol.png",
-    imgDesc: "Hasbro Logo",
-  },
-  {
-    title: "blah blah blah",
-    company: "blah",
-    date: "Jan 202s",
-    description: "lorem",
-    imgSrc: "/Hasbro_logo_symbol.png",
-    imgDesc: "Hasbro Logo",
-  },
-];
+  */
 
 export default function Experiences() {
-  const [jobs, setJobs] = useState(experience);
+  const [jobs, setJobs] = useState(experiences);
   const [selectedJob, setSelectedJob] = useState(jobs[0]);
   const handleJobClick = (job: Job) => {
     setSelectedJob(job);
@@ -90,8 +84,8 @@ export default function Experiences() {
   };
 
   const handleOrderChron = () => {
-    setJobs(experience);
-    setSelectedJob(experience[0]);
+    setJobs(experiences);
+    setSelectedJob(experiences[0]);
   };
   const scrollerRef = useRef<HTMLDivElement>(null);
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
@@ -217,8 +211,8 @@ export default function Experiences() {
                 >
                   <Image
                     draggable={false}
-                    src={job.imgSrc}
-                    alt="hasbro"
+                    src={job.logoImgSrc}
+                    alt={job.logoImgDesc}
                     width={50}
                     height={50}
                     className="rounded"
@@ -231,8 +225,8 @@ export default function Experiences() {
         </Reorder.Group>
       </div>
       <AnimatePresence mode="wait">
-        <motion.div
-          className="selected-job-description"
+        {/* <motion.div
+          className="job-description"
           key={selectedJob ? selectedJob.title : "empty"}
           initial={{
             opacity: 0,
@@ -242,8 +236,15 @@ export default function Experiences() {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.15 }}
         >
-          {selectedJob.description}
-        </motion.div>
+          {selectedJob.jobDescription}
+        </motion.div> */}
+        <JobDescription
+          companyImg={selectedJob.companyImgSrc}
+          companyDesc={selectedJob.companyDescription}
+          jobDesc={selectedJob.jobDescription}
+          jobImg={selectedJob.jobImgSrc}
+          technologies={selectedJob.technologies}
+        />
       </AnimatePresence>
     </div>
   );
