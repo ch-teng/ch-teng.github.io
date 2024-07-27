@@ -1,0 +1,25 @@
+TODO
+
+WHOAMI
+Brainstorm general idea for entry animation
+Create one-time on load entry
+Fix scroll animation with layers
+
+ABOUT
+Brainstorm ideas for how to display personal points that show
+- personality
+- roles
+- points of difference
+Create animation for entry (probably scroll related)
+
+EXPERIENCES
+Finish animation for each card -- DONE
+Create infinity carosel for tech icons
+Add experiences description for all jobs
+Potentially come up with better experiences timeline menu (probably better for v2.1)
+
+SKILLS - COMPLETED
+
+FOOTER - COMPLETED
+
+MENU - COMPLETED

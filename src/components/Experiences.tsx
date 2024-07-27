@@ -37,17 +37,25 @@ const experiences: Array<Job> = [
     logoImgSrc: "/priceline/priceline-logo.png",
     logoImgDesc: "Priceline Logo",
   },
-];
-
-/*
   {
     title: "Web Developer Coop",
     company: "TriNetX",
     date: "May 2020 - Aug 2020",
-    description: "TriNetX Job",
-    imgSrc: "/TriNetX-Logo-PR.jpeg",
-    imgDesc: "TriNetX Logo",
+    logoImgSrc: "/trinetx/TriNetX-Logo-PR.jpeg",
+    logoImgDesc: "TriNetX Logo",
+    companyDescription:
+      "TriNetX is a global network of healthcare organizations and life sciences companies driving real-world research to accelerate the development of new therapies. Through its self-service, HIPAA, GDPR, and LGPD-compliant platform of federated EHR, datasets, and consulting partnerships, TriNetX puts the power of real-world data into the hands of its worldwide community to improve protocol design, streamline trial operations, refine safety signals, and enrich real-world evidence generation.",
+    companyImgSrc: "/trinetx/office.jpg",
+    jobDescription:
+      "Led the full-stack development of a new feature on the web app allowing the administrators better access to the protected information of different healthcare networks * Fostered the creation of a peer-programming system to help institutionalize crucial knowledge for newhires and experts alike deployed in December 2022 to be used company-wide * Resolved inconsistencies in repositories about the handling of time zones and dates and presented findings, fixing misrepresented data across all users and increasing customer satisfaction by 10%",
+    jobImgSrc: "/trinetx/job.jpeg",
+    technologies:
+      "TypeScript, React, Javascript, Maven, NextJS, NodeJS, Cypress, SQL, Java, Spring Boot",
   },
+];
+
+/*
+
   {
     title: "Software Developer",
     company: "Hasbro",
@@ -224,8 +232,8 @@ export default function Experiences() {
           </AnimatePresence>
         </Reorder.Group>
       </div>
-      <AnimatePresence mode="wait">
-        {/* <motion.div
+
+      {/* <motion.div
           className="job-description"
           key={selectedJob ? selectedJob.title : "empty"}
           initial={{
@@ -238,14 +246,13 @@ export default function Experiences() {
         >
           {selectedJob.jobDescription}
         </motion.div> */}
-        <JobDescription
-          companyImg={selectedJob.companyImgSrc}
-          companyDesc={selectedJob.companyDescription}
-          jobDesc={selectedJob.jobDescription}
-          jobImg={selectedJob.jobImgSrc}
-          technologies={selectedJob.technologies}
-        />
-      </AnimatePresence>
+      <JobDescription
+        companyImg={selectedJob.companyImgSrc}
+        companyDesc={selectedJob.companyDescription}
+        jobDesc={selectedJob.jobDescription}
+        jobImg={selectedJob.jobImgSrc}
+        technologies={selectedJob.technologies}
+      />
     </div>
   );
 }
