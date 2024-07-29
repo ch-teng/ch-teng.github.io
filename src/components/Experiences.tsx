@@ -232,20 +232,6 @@ export default function Experiences() {
           </AnimatePresence>
         </Reorder.Group>
       </div>
-
-      {/* <motion.div
-          className="job-description"
-          key={selectedJob ? selectedJob.title : "empty"}
-          initial={{
-            opacity: 0,
-            y: -20,
-          }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.15 }}
-        >
-          {selectedJob.jobDescription}
-        </motion.div> */}
       <JobDescription
         companyImg={selectedJob.companyImgSrc}
         companyDesc={selectedJob.companyDescription}

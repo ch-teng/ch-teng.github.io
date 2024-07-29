@@ -61,7 +61,7 @@ export const Card = ({ imgSrc, imgDesc, description, sideInfo }: CardProps) => {
               alt={imgDesc}
               className="card-img"
               fill={true}
-            ></Image>
+            />
           </div>
           <div className="card-description text-box">
             {description.replaceAll("*", "\n")}

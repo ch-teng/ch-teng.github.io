@@ -17,7 +17,7 @@ export const JobDescription = ({
   technologies,
 }: JobDescriptionProps) => {
   return (
-    <div className="job-description">
+    <div className="frame-holder">
       <AnimatePresence mode="wait">
         <motion.div
           key={companyImg}

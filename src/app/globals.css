@@ -147,6 +147,20 @@ span {
   align-items: center;
 }
 
+.photo-gal-holder {
+  border-radius: 1rem;
+  outline: 3px solid white;
+  overflow: hidden;
+}
+.about-photo-gal {
+  width: 600px;
+  height: 800px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+
+}
+
 .experiences {
   color: var(--primary);
   background: var(--tertiary);
@@ -238,8 +252,7 @@ span {
   -ms-user-select: none;
 }
 
-.job-description {
-  /* background: black; */
+.frame-holder {
   color: white;
   padding: 1rem;
   width: 80%;
@@ -280,8 +293,7 @@ span {
   min-height: fit-content;
 }
 .card-side-info{
-  background: var(--primary);
-  color:#000;
+  background: var(--quint);
   width: min-content;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.75);
   border-radius: 1rem;
