@@ -5,11 +5,18 @@ import { useState } from "react";
 type CardProps = {
   imgSrc: string;
   imgDesc: string;
+  cardTitle: string;
   description: string;
   sideInfo?: string;
 };
 
-export const Card = ({ imgSrc, imgDesc, description, sideInfo }: CardProps) => {
+export const Card = ({
+  imgSrc,
+  imgDesc,
+  cardTitle,
+  description,
+  sideInfo,
+}: CardProps) => {
   const [showSideInfo, setShowSideInfo] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const sideInfoSlide: Variants = {
@@ -64,6 +71,7 @@ export const Card = ({ imgSrc, imgDesc, description, sideInfo }: CardProps) => {
             />
           </div>
           <div className="card-description text-box">
+            <h3 style={{ textAlign: "center", margin: "0" }}>{cardTitle}</h3>
             {description.replaceAll("*", "\n")}
           </div>
         </motion.div>

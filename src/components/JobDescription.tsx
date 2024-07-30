@@ -3,7 +3,9 @@ import { Card } from "./Card";
 
 type JobDescriptionProps = {
   companyImg: string;
+  companyTitle: string;
   companyDesc: string;
+  jobTitle: string;
   jobDesc: string;
   jobImg: string;
   technologies?: string;
@@ -11,8 +13,10 @@ type JobDescriptionProps = {
 
 export const JobDescription = ({
   companyImg,
+  companyTitle,
   companyDesc,
   jobDesc,
+  jobTitle,
   jobImg,
   technologies,
 }: JobDescriptionProps) => {
@@ -40,6 +44,7 @@ export const JobDescription = ({
           <Card
             imgSrc={companyImg}
             imgDesc={companyImg}
+            cardTitle={companyTitle}
             description={companyDesc}
           />
         </motion.div>
@@ -64,6 +69,7 @@ export const JobDescription = ({
           <Card
             imgSrc={jobImg}
             imgDesc={jobImg}
+            cardTitle={jobTitle}
             description={jobDesc}
             sideInfo={technologies}
           />

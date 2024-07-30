@@ -170,7 +170,7 @@ span {
 .carousel-holder {
   display: flex;
   overflow: hidden;
-  mask-image: linear-gradient(to right,#0000 0%, #000 3%, 97%, #0000 100%);
+  mask-image: linear-gradient(to right,#0000 0%, #000 3%, #000 97%, #0000 100%);
 
 }
 

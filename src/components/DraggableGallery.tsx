@@ -41,12 +41,12 @@ export default function DraggableGallery() {
     setPage([page + newDirection, newDirection]);
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setPage([page + 1, 1]);
-  //   }, 5000);
-  //   return () => clearInterval(interval);
-  // }, [page]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPage([page + 1, 1]);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [page]);
   return (
     <div className="photo-gal-holder">
       <AnimatePresence initial={false} custom={direction} mode="wait">

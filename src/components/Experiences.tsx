@@ -88,7 +88,7 @@ const experiences: Array<Job> = [
     title: "Cyber Security Analyst Intern",
     company: "Hasbro",
     date: "Jan 2021 - June 2021",
-    logoImgSrc: "/Hasbro_logo_symbol.png",
+    logoImgSrc: "/hasbro/Hasbro_logo_symbol.png",
     logoImgDesc: "Hasbro Logo",
     companyDescription:
       "Hasbro is a leading toy and game company whose mission is to entertain and connect generations of fans through the wonder of storytelling and exhilaration of play. Hasbro delivers engaging brand experiences for global audiences through toys, consumer products, gaming and entertainment, with a portfolio of iconic brands including MAGIC: THE GATHERING, DUNGEONS & DRAGONS, Hasbro Gaming, NERF, TRANSFORMERS, PLAY-DOH and PEPPA PIG, as well as premier partner brands.",
@@ -223,44 +223,44 @@ export default function Experiences() {
           onTouchStart={handleTouchStart}
           style={{ cursor: "grab" }}
         >
-          <AnimatePresence>
-            {jobs.map((job) => (
-              <Reorder.Item
-                key={job.title}
-                value={job}
-                id={job.date}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                dragListener={false}
+          {jobs.map((job) => (
+            <Reorder.Item
+              key={job.title}
+              value={job}
+              id={job.date}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              dragListener={false}
+            >
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300, damping: 40 }}
+                whileTap={{ scale: 0.9 }}
+                className={`job ${job === selectedJob ? "selected" : ""}`}
+                onClick={() => {
+                  handleJobClick(job);
+                }}
               >
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 40 }}
-                  whileTap={{ scale: 0.9 }}
-                  className={`job ${job === selectedJob ? "selected" : ""}`}
-                  onClick={() => {
-                    handleJobClick(job);
-                  }}
-                >
-                  <Image
-                    draggable={false}
-                    src={job.logoImgSrc}
-                    alt={job.logoImgDesc}
-                    width={50}
-                    height={50}
-                    className="rounded"
-                  />
-                  <div>{job.title}</div>
-                </motion.button>
-              </Reorder.Item>
-            ))}
-          </AnimatePresence>
+                <Image
+                  draggable={false}
+                  src={job.logoImgSrc}
+                  alt={job.logoImgDesc}
+                  width={50}
+                  height={50}
+                  className="rounded"
+                />
+                <div>{job.title}</div>
+              </motion.button>
+            </Reorder.Item>
+          ))}
         </Reorder.Group>
       </div>
       <JobDescription
         companyImg={selectedJob.companyImgSrc}
+        companyTitle={selectedJob.company}
         companyDesc={selectedJob.companyDescription}
+        jobTitle={selectedJob.title + " ~ " + selectedJob.date}
         jobDesc={selectedJob.jobDescription}
         jobImg={selectedJob.jobImgSrc}
         technologies={selectedJob.technologies}
