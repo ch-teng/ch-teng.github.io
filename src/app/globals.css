@@ -158,6 +158,19 @@ span {
   overflow: hidden;
   position: relative;
   border-radius: 1rem;
+}
+
+.frame-subsection {
+  width: 800px;
+  height: 800px;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.carousel-holder {
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(to right,#0000 0%, #000 3%, 97%, #0000 100%);
 
 }
 

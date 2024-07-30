@@ -1,98 +1,98 @@
+/* eslint-disable react/no-unescaped-entities */
+
+//CREDIT to FramerMotion docs for inspiration for the image carousel for this
+//about page https://www.framer.com/motion/animate-presence/
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { SlideText } from "./SlideText";
-import Image from "next/image";
+import InfiniteCarousel from "./InfiniteCarousel";
+import DraggableGallery from "./DraggableGallery";
 
 export default function About() {
-  const imgList = [
-    "/about-photos/1.JPG",
-    "/about-photos/2.JPG",
-    "/about-photos/3.JPG",
-    "/about-photos/4.JPG",
-    "/about-photos/5.JPG",
-    "/about-photos/6.JPG",
+  const posterList = [
+    "/posters/arcane1.jpg",
+    "/posters/EEAAO.jpg",
+    "/posters/loki.jpg",
+    "/posters/TedLasso.jpg",
+    "/posters/spiderverse.jpg",
+    "/posters/arcane2.jpg",
   ];
-
-  const variants = {
-    enter: (direction: number) => {
-      return {
-        x: direction > 0 ? 600 : -600,
-        opacity: 0,
-      };
-    },
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => {
-      return {
-        x: direction < 0 ? 600 : -600,
-        opacity: 0,
-      };
-    },
-  };
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
-
-  const [[page, direction], setPage] = useState([0, 0]);
-
-  const imageIndex = Math.abs(page % imgList.length);
-
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPage([page + 1, 1]);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [page]);
 
   return (
     <div className="page about center-page" id="about">
       <SlideText word="About" />
       <div className="frame-holder">
-        <div className="photo-gal-holder">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
-              key={page}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              className="about-photo-gal"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.1 },
-              }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.x);
-                if (swipe < -swipeConfidenceThreshold) {
-                  paginate(1);
-                } else if (swipe > swipeConfidenceThreshold) {
-                  paginate(-1);
-                }
-              }}
-            >
-              <Image
-                src={imgList[imageIndex]}
-                alt="about image"
-                fill={true}
-                draggable={false}
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        <motion.div
+          initial={{ x: -300, opacity: 0 }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{ stiffness: 200, duration: 0.5 }}
+          viewport={{ amount: 0.25 }}
+        >
+          <DraggableGallery />
+        </motion.div>
         <div className="frame-subsection card-layout">
-          <div className="about-professional card-deco"></div>
-          <div className="about-personal"></div>
+          <div className="about-professional">
+            <motion.div
+              className="card-description"
+              style={{ textAlign: "center" }}
+              initial={{ x: 300, opacity: 0 }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+              }}
+              transition={{ stiffness: 200, duration: 0.5 }}
+              viewport={{ amount: 0.5 }}
+            >
+              Hi! I'm Chris, a professional software engineer with a passion for
+              full stack web development and design. I've had the pleasure of
+              working at several industry standard institutions and have gained
+              a wealth of experience in the field. I graduated from Northeastern
+              University with degrees in Computer Science and Business
+              Administration, concentrating in Marketing. I'm always looking for
+              new opportunities to learn and grow, so feel free to reach out to
+              me!
+            </motion.div>
+          </div>
+          <div className="about-personal">
+            <motion.div
+              className="card-description"
+              style={{ textAlign: "center" }}
+              initial={{ x: 300, opacity: 0 }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+              }}
+              transition={{ stiffness: 200, duration: 0.5 }}
+              viewport={{ amount: 0.5 }}
+            >
+              I have a passion for creating, making a few of my own designs like
+              this website as well as a few minimalist posters of some of my
+              favorite tv shows and movies. Some hobbies of mine include working
+              out, playing video games, watching movies, and knitting! I love
+              trying new things and am always looking for new experiences. Ask
+              me about anything and I'll tell you all I know about it, and I'll
+              hope you will do the same!
+            </motion.div>
+          </div>
+          <motion.div
+            initial={{ x: 300, opacity: 0 }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition={{ stiffness: 200, duration: 0.5 }}
+            viewport={{ amount: 0.5 }}
+          >
+            <InfiniteCarousel
+              imgList={posterList}
+              imgWidth={220}
+              imgHeight={340}
+              carouselWidth={800}
+              imgGap={20}
+            />
+          </motion.div>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ export default function Whoami() {
     <div className="page whoami" id="whoami">
       <div className="backgroundContainer">
         <BackgroundSky />
-        <BackgroundLand />
+        {/* <BackgroundLand /> */}
       </div>
     </div>
   );
