@@ -427,7 +427,7 @@ span {
   flex-direction: row;
   align-items: start;
   justify-content: center;
-  height: 160vh;
+  height: 1500px;
 }
 
 .backgroundContainer {
@@ -438,9 +438,16 @@ span {
 
 .background-ground-container { 
   width: 100vw;
-  height: 60vh;
+  height: 600px;
   z-index: 1;
   position:relative;
+}
+.tester {
+  fill:none;
+  stroke: white;
+  stroke-width:5;
+  stroke-miterlimit:10;
+  z-index: 1000;
 }
 
 .hill-holder {

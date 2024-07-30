@@ -122,12 +122,31 @@ const BG4 = () => {
   );
 };
 
+const Test = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1920px"
+      height="205px"
+      viewBox="0 0 1920 205"
+      className="tester"
+    >
+      <g>
+        <path
+          d="M0,2.5c160,0,160,200,320,200c160,0,160-200,320-200c160,0,160,200,320,200c160,0,160-200,320-200
+		c160,0,160,200,320,200s160-200,320-200"
+        />
+      </g>
+    </svg>
+  );
+};
+
 export default function BackgroundLand() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   return (
     <div className="background-ground-container" ref={ref}>
-      <BG4 />
+      <Test />
       <BG3 scrollProgress={scrollYProgress} />
       <BG2 scrollProgress={scrollYProgress} />
       <BG1 scrollProgress={scrollYProgress} />

@@ -31,21 +31,6 @@ const Name = () => {
           Teng
         </motion.h1>
       </div>
-      <div className="self-info">
-        <div className="picture">
-          {/* <img
-            src="https://avatars.githubusercontent.com/u/58990613?v=4"
-            alt="Chris Teng"
-          /> */}
-        </div>
-        <div className="elev-pitch">
-          <p>
-            I am a full-stack developer with a passion for creating beautiful
-            and functional web applications. I am always looking for new
-            challenges and opportunities to learn and grow.
-          </p>
-        </div>
-      </div>
     </div>
   );
 };

@@ -67,13 +67,13 @@ export default function About() {
               transition={{ stiffness: 200, duration: 0.5 }}
               viewport={{ amount: 0.5 }}
             >
-              I have a passion for creating, making a few of my own designs like
+              I have a passion for creating—making a few of my own designs like
               this website as well as a few minimalist posters of some of my
               favorite tv shows and movies. Some hobbies of mine include working
               out, playing video games, watching movies, and knitting! I love
               trying new things and am always looking for new experiences. Ask
-              me about anything and I'll tell you all I know about it, and I'll
-              hope you will do the same!
+              me about anything: I'll tell you all I know about it, and I'll
+              hope you'll do the same!
             </motion.div>
           </div>
           <motion.div
