@@ -20,7 +20,7 @@ interface Job {
 
 const experiences: Array<Job> = [
   {
-    title: "Full Stack Developer Coop",
+    title: "Full Stack Developer Co-op",
     company: "Priceline",
     date: "Jan 2021 - June 2021",
     companyDescription:
@@ -38,7 +38,7 @@ const experiences: Array<Job> = [
     logoImgDesc: "Priceline Logo",
   },
   {
-    title: "Web Developer Coop",
+    title: "Web Developer Co-op",
     company: "TriNetX",
     date: "May 2020 - Aug 2020",
     logoImgSrc: "/trinetx/TriNetX-Logo-PR.jpeg",
@@ -52,34 +52,60 @@ const experiences: Array<Job> = [
     technologies:
       "TypeScript, React, Javascript, Maven, NextJS, NodeJS, Cypress, SQL, Java, Spring Boot",
   },
-];
-
-/*
-
   {
-    title: "Software Developer",
+    title: "Software Developer Co-op",
     company: "Hasbro",
     date: "Jan 2021 - June 2021",
-    description: "Hasbro Software Developer Job",
-    imgSrc: "/Hasbro_logo_symbol.png",
-    imgDesc: "Hasbro Logo",
+    logoImgSrc: "/hasbro/Hasbro_logo_symbol.png",
+    logoImgDesc: "Hasbro Logo",
+    companyDescription:
+      "Hasbro is a leading toy and game company whose mission is to entertain and connect generations of fans through the wonder of storytelling and exhilaration of play. Hasbro delivers engaging brand experiences for global audiences through toys, consumer products, gaming and entertainment, with a portfolio of iconic brands including MAGIC: THE GATHERING, DUNGEONS & DRAGONS, Hasbro Gaming, NERF, TRANSFORMERS, PLAY-DOH and PEPPA PIG, as well as premier partner brands.",
+    companyImgSrc: "/hasbro/office.jpg",
+    jobDescription:
+      "Renovated https://apps.hasbro.com utilizing the NextJS framework and translation modules" +
+      "* Coordinated project development utilizing sprint structures like Agile and SCRUM through Jira" +
+      "* Developed a custom NodeJS script to migrate content information for website to new CMS",
+    jobImgSrc: "/hasbro/website-01.jpg",
+    technologies:
+      "TypeScript, Javascript, React, NextJS, NodeJS, Java, Jest, HTML, CSS",
   },
   {
     title: "Project Developer",
     company: "PrepareRI",
     date: "Jan 2021 - June 2021",
-    description: "Project Developer",
-    imgSrc: "/PrepareRI_logo.png",
-    imgDesc: "PrepareRI Logo",
+    logoImgSrc: "/PrepareRI_logo.png",
+    logoImgDesc: "PrepareRI Logo",
+    companyDescription:
+      "Prepare RI is an interagency program that prepares youth for college and careers by bridging K-12, postsecondary and industry forces to introduce, develop and prepare youth for the skills and learning they need after they finish high school.",
+    companyImgSrc: "/prepareRI/office.jpg",
+    jobDescription:
+      "Designed a system to connect a local daycare to families during socially-distanced times" +
+      "* Developed a brand to consumers by communicating company ideas through online presence" +
+      "* Presented brand, designs, and advertisement campaign to company leads for future developmen",
+    jobImgSrc: "/prepareRI/website.jpg",
   },
   {
     title: "Cyber Security Analyst Intern",
     company: "Hasbro",
     date: "Jan 2021 - June 2021",
-    description: "Hasbro Cyber Security Analyst Intern Job",
-    imgSrc: "/Hasbro_logo_symbol.png",
-    imgDesc: "Hasbro Logo",
+    logoImgSrc: "/Hasbro_logo_symbol.png",
+    logoImgDesc: "Hasbro Logo",
+    companyDescription:
+      "Hasbro is a leading toy and game company whose mission is to entertain and connect generations of fans through the wonder of storytelling and exhilaration of play. Hasbro delivers engaging brand experiences for global audiences through toys, consumer products, gaming and entertainment, with a portfolio of iconic brands including MAGIC: THE GATHERING, DUNGEONS & DRAGONS, Hasbro Gaming, NERF, TRANSFORMERS, PLAY-DOH and PEPPA PIG, as well as premier partner brands.",
+    companyImgSrc: "/hasbro/office.jpg",
+    jobDescription:
+      "Managed permissions of Hasbro’s active, global IP addresses utilizing self-built Python scripts" +
+      "* Automated daily tasks of the Cyber Security team, freeing time for full time developers" +
+      "* Connected with team members to help understand when to seek help and how to operate in a workplace",
+    jobImgSrc: "/hasbro/brands.jpg",
   },
+];
+
+/*
+
+
+
+
   */
 
 export default function Experiences() {
