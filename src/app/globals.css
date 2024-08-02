@@ -153,16 +153,16 @@ span {
   overflow: hidden;
 }
 .about-photo-gal {
-  width: 600px;
-  height: 800px;
+  width: 550px;
+  height: 733px;
   overflow: hidden;
   position: relative;
   border-radius: 1rem;
 }
 
 .frame-subsection {
-  width: 800px;
-  height: 800px;
+  width: 700px;
+  height: 733px;
   flex-direction: column;
   row-gap: 1rem;
 }
@@ -281,13 +281,13 @@ span {
 }
 
 .company-card {
-  width: 532px;
+  width: 500px;
   height: 100%;
 }
 
 .job-card {
   min-width: min-content;
-  width: 912px;
+  width: 775px;
   height: 100%;
 }
 

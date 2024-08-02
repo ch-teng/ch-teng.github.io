@@ -87,9 +87,9 @@ export default function About() {
           >
             <InfiniteCarousel
               imgList={posterList}
-              imgWidth={220}
-              imgHeight={340}
-              carouselWidth={800}
+              imgWidth={165}
+              imgHeight={255}
+              carouselWidth={700}
               imgGap={20}
             />
           </motion.div>
