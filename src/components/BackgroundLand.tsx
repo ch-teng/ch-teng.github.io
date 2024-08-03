@@ -127,14 +127,14 @@ const Test = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1920px"
-      height="205px"
-      viewBox="0 0 1920 205"
+      height="55px"
+      viewBox="0 0 1920 52"
       className="tester"
     >
       <g>
         <path
-          d="M0,2.5c160,0,160,200,320,200c160,0,160-200,320-200c160,0,160,200,320,200c160,0,160-200,320-200
-		c160,0,160,200,320,200s160-200,320-200"
+          d="M0,0.5c96,0,96,50,192,50c96,0,96-50,192-50s96,50,192,50c96,0,96-50,192-50c96,0,96,50,192,50
+	c96,0,96-50,192-50c96,0,96,50,192,50c96,0,96-50,192-50c96,0,96,50,192,50c96,0,96-50,192-50"
         />
       </g>
     </svg>
@@ -144,13 +144,36 @@ const Test = () => {
 export default function BackgroundLand() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
+  const firstNameContainer = {
+    hidden: {
+      opacity: 1,
+      x: "100%",
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5 },
+    },
+  };
   return (
     <div className="background-ground-container" ref={ref}>
-      <Test />
-      <BG3 scrollProgress={scrollYProgress} />
-      <BG2 scrollProgress={scrollYProgress} />
-      <BG1 scrollProgress={scrollYProgress} />
-      <BG0 scrollProgress={scrollYProgress} />
+      {/* <Test /> */}
+      <div className="name">
+        <motion.h1
+          variants={firstNameContainer}
+          initial="hidden"
+          animate="show"
+        >
+          Chris
+        </motion.h1>
+        <motion.h1
+          variants={firstNameContainer}
+          initial="hidden"
+          animate="show"
+        >
+          Teng
+        </motion.h1>
+      </div>
     </div>
   );
 }
