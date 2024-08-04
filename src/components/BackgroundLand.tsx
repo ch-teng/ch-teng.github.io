@@ -1,5 +1,6 @@
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+import Wave from "./Wave";
 
 interface BGProps {
   scrollProgress: MotionValue<number>;
@@ -126,9 +127,7 @@ const Test = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1920px"
-      height="55px"
-      viewBox="0 0 1920 52"
+      viewBox="0 0 1920 55"
       className="tester"
     >
       <g>
@@ -155,25 +154,21 @@ export default function BackgroundLand() {
       transition: { duration: 0.5 },
     },
   };
+  const name = () => {
+    <div className="name">
+      <motion.h1 variants={firstNameContainer} initial="hidden" animate="show">
+        Chris
+      </motion.h1>
+      <motion.h1 variants={firstNameContainer} initial="hidden" animate="show">
+        Teng
+      </motion.h1>
+    </div>;
+  };
+
   return (
     <div className="background-ground-container" ref={ref}>
-      {/* <Test /> */}
-      <div className="name">
-        <motion.h1
-          variants={firstNameContainer}
-          initial="hidden"
-          animate="show"
-        >
-          Chris
-        </motion.h1>
-        <motion.h1
-          variants={firstNameContainer}
-          initial="hidden"
-          animate="show"
-        >
-          Teng
-        </motion.h1>
-      </div>
+      <Wave aboveColor="#F4E6BE" belowColor="#BCF8EC" />
+      <Test />
     </div>
   );
 }

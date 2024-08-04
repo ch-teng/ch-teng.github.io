@@ -1,5 +1,5 @@
 import { removeItem } from "@/utils/array-utils";
-import { AnimatePresence, Reorder, motion } from "framer-motion";
+import { Reorder, motion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { SlideText } from "./SlideText";
