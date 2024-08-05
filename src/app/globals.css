@@ -142,7 +142,7 @@ span {
   height: fit-content;
   min-height: 1080px;
   overflow-x: clip;
-  overflow-y: hidden;
+
 }
 
 .slide-text {
@@ -436,7 +436,7 @@ span {
 /* Whoami css */
 
 .whoami {
-  height: 1080px;
+  height: 100vh;
   background: #F4E6BE;
 }
 
@@ -448,6 +448,7 @@ span {
   position:relative;
   overflow-x: hidden;
   overflow-y: clip;
+
 }
 
 .on-load-bg {
@@ -606,21 +607,50 @@ span {
 
 .name {
   position: absolute;
-  font-weight: 800;
   font-size: 5rem;
-  top: 10%;
-  left: 15%;
+  top: 45vh;
+  left: 50vw;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  color: rgb(234, 249, 253);
+  width: max-content;
+  clip-path: content-box;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  color: rgb(234, 249, 253);
-  clip-path: content-box;
-  mask-image: linear-gradient(to right,#000 95%, #0000 100%);
+  align-items: center;
+  mask-image: linear-gradient(to bottom,#000 95%, #0000 100%);
+
 }
 .name > h1 {
+  background: linear-gradient(to bottom, var(--secondary), var(--tertiary), var(--quad), var(--quint) );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 800;
   margin: 0;
   padding: 0;
+}
 
+.greeting {
+  position: absolute;
+  top: 60vh;
+  left: 50vw;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  color: rgb(234, 249, 253);
+  width: max-content;
+  clip-path: content-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  mask-image: linear-gradient(to top,#000 95%, #0000 100%);
+}
+.greeting > h3 {
+  color: var(--quint);
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .skill {

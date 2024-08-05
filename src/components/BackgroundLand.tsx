@@ -11,26 +11,27 @@ import React, { useRef } from "react";
 export default function BackgroundLand() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const firstNameContainer = {
+  const nameContainer = {
     hidden: {
       opacity: 1,
-      x: "100%",
+      y: "100%",
     },
     show: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 0.5 },
+      y: 0,
+      transition: { delay: 1, duration: 0.5 },
     },
   };
-  const name = () => {
-    <div className="name">
-      <motion.h1 variants={firstNameContainer} initial="hidden" animate="show">
-        Chris
-      </motion.h1>
-      <motion.h1 variants={firstNameContainer} initial="hidden" animate="show">
-        Teng
-      </motion.h1>
-    </div>;
+  const greetingContainer = {
+    hidden: {
+      opacity: 1,
+      y: "-100%",
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { delay: 1.4, duration: 0.5 },
+    },
   };
 
   let rays = [];
@@ -109,6 +110,16 @@ export default function BackgroundLand() {
         <motion.div className="rock-left-back" variants={rockStagger} />
         <motion.div className="rock-right-back" variants={rockStagger} />
       </motion.div>
+      <div className="name">
+        <motion.h1 variants={nameContainer} initial="hidden" animate="show">
+          Chris Teng
+        </motion.h1>
+      </div>
+      <div className="greeting">
+        <motion.h3 variants={greetingContainer} initial="hidden" animate="show">
+          Hi! 👋
+        </motion.h3>
+      </div>
     </div>
   );
 }
