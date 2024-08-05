@@ -17,7 +17,7 @@ export const SlideText = ({ word, onLoadOnly }: slideTextProps) => {
         { delay: stagger(0.05), duration: 1, type: "spring" }
       );
     }
-  }, [isInView]);
+  }, [animate, isInView]);
   return (
     <motion.div ref={scope} className="slide-text">
       {word.split("").map((letter, index) => (

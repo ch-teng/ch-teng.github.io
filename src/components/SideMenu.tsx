@@ -53,7 +53,7 @@ export const MenuItems = ({ onClick }: MenuItemsProps) => {
       };
       endAni();
     }
-  }, [isPresent]);
+  }, [animate, isPresent, safeToRemove]);
 
   return (
     <>
