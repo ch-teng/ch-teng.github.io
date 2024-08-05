@@ -1,9 +1,9 @@
 TODO
 
 WHOAMI
-Brainstorm general idea for entry animation
-Create one-time on load entry
-Fix scroll animation with layers
+Brainstorm general idea for entry animation - DONE
+Create one-time on load entry - DONE
+Fix scroll animation with layers - DONE
 
 ABOUT
 Brainstorm ideas for how to display personal points that show - DONE
@@ -16,7 +16,7 @@ EXPERIENCES
 Finish animation for each card -- DONE
 Create infinity carosel for tech icons
 Add experiences description for all jobs - DONE
-Potentially come up with better experiences timeline menu (probably better for v2.1)
+Potentially come up with better experiences timeline menu (probably better for v1.1)
 
 SKILLS - COMPLETED
 

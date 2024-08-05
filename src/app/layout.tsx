@@ -5,8 +5,11 @@ import "./globals.css";
 const inter = Anek_Gujarati({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Personality in Productivity",
+  title: "Hi! I'm Chris",
   description: "A website created by Chris Teng",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
