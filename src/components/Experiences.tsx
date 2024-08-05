@@ -22,7 +22,7 @@ const experiences: Array<Job> = [
   {
     title: "Full Stack Developer Co-op",
     company: "Priceline",
-    date: "Jan 2021 - June 2021",
+    date: "June 2023 - Jan 2024",
     companyDescription:
       "Priceline is a travel agency that offers discount rates for travel-related purchases such as airline tickets and hotel stays. Priceline is headquartered in Norwalk, Connecticut, United States and is wholly owned by Booking Holdings, which also owns Kayak.com, Booking.com and other sites.",
     companyImgSrc: "/priceline/Priceline-office.jpg",
@@ -38,9 +38,9 @@ const experiences: Array<Job> = [
     logoImgDesc: "Priceline Logo",
   },
   {
-    title: "Web Developer Co-op",
+    title: "Software Developer Co-op",
     company: "TriNetX",
-    date: "May 2020 - Aug 2020",
+    date: "June 2022 - Dec 2022",
     logoImgSrc: "/trinetx/TriNetX-Logo-PR.jpeg",
     logoImgDesc: "TriNetX Logo",
     companyDescription:
@@ -55,7 +55,7 @@ const experiences: Array<Job> = [
   {
     title: "Software Developer Co-op",
     company: "Hasbro",
-    date: "Jan 2021 - June 2021",
+    date: "May 2021 - Aug 2021",
     logoImgSrc: "/hasbro/Hasbro_logo_symbol.png",
     logoImgDesc: "Hasbro Logo",
     companyDescription:
@@ -72,7 +72,7 @@ const experiences: Array<Job> = [
   {
     title: "Project Developer",
     company: "PrepareRI",
-    date: "Jan 2021 - June 2021",
+    date: "June 2020 - Aug 2020",
     logoImgSrc: "/PrepareRI_logo.png",
     logoImgDesc: "PrepareRI Logo",
     companyDescription:
@@ -87,7 +87,7 @@ const experiences: Array<Job> = [
   {
     title: "Cyber Security Analyst Intern",
     company: "Hasbro",
-    date: "Jan 2021 - June 2021",
+    date: "June 2019 - Aug 2019",
     logoImgSrc: "/hasbro/Hasbro_logo_symbol.png",
     logoImgDesc: "Hasbro Logo",
     companyDescription:
@@ -225,7 +225,7 @@ export default function Experiences() {
         >
           {jobs.map((job) => (
             <Reorder.Item
-              key={job.title}
+              key={job.date}
               value={job}
               id={job.date}
               initial={{ opacity: 0, y: 20 }}

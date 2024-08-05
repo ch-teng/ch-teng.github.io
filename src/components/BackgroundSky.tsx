@@ -9,5 +9,5 @@ const Name = () => {
 //Think about this for a future design...maybe create a jumping line that adds name and a few stars
 //Also add contact information
 export default function BackgroundSky() {
-  return <div className="background-sky-container"></div>;
+  return <div className="background-sky"></div>;
 }

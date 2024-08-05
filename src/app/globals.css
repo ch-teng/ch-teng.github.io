@@ -1,15 +1,24 @@
 :root {
   color-scheme: dark;
-  --primary: #BCF8EC;
+  --primary: #bcf8ec;
   --secondary: #7CBAC0;
   --tertiary: #25455F;
   --quad: #183146;
   --quint: #0A132B;
+  --teal0: #8bf0dc;
+  --teal1: #9fe9f7;
+  --teal2: #5dc7ab;
+  --teal3: #a6d3df;
+  --teal4: #99f8e5;
+  --teal5: #9ce0dc;
+  --teal6: #82f3ed;
+  --teal7: #b3f1f3;
+  --teal8: #89d7db;
+  --teal9: #b3dfe6;
 }
 
 Link {
   all: unset;
-
 }
 body {
   margin: 0;
@@ -17,6 +26,7 @@ body {
   height:max-content;
   width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 div {
   margin: 0;
@@ -423,19 +433,19 @@ span {
 /* Whoami css */
 
 .whoami {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: center;
   height: 1400px;
 }
 
-
-.background-ground-container { 
-  background: var(--primary);
+.background-sky {
+  background: #F4E6BE;
   width: 100%;
-  height: 600px;
-  /* z-index: 100; */
+  height: 5%;
+}
+
+.background-ground { 
+  background: #F4E6BE;
+  width: 100%;
+  height: 95%;
   position:relative;
 }
 .tester {
@@ -444,6 +454,74 @@ span {
   stroke-width:5;
   stroke-miterlimit:10;
   z-index: 1000;
+}
+
+.shimmer-water {
+  background: linear-gradient(to bottom, var(--secondary) 50%, var(--tertiary));
+  height: 100%;
+  width: 200vw;
+  min-width: 1920px;
+  clip-path: polygon(100% 100%, 0% 100% , 0.00% 11.50%, 1.67% 11.07%, 3.33% 9.85%, 5.00% 8.05%, 6.67% 5.98%, 8.33% 4.00%, 10.00% 2.45%, 11.67% 1.61%, 13.33% 1.61%, 15.00% 2.45%, 16.67% 4.00%, 18.33% 5.98%, 20.00% 8.05%, 21.67% 9.85%, 23.33% 11.07%, 25.00% 11.50%, 26.67% 11.07%, 28.33% 9.85%, 30.00% 8.05%, 31.67% 5.98%, 33.33% 4.00%, 35.00% 2.45%, 36.67% 1.61%, 38.33% 1.61%, 40.00% 2.45%, 41.67% 4.00%, 43.33% 5.98%, 45.00% 8.05%, 46.67% 9.85%, 48.33% 11.07%, 50.00% 11.50%, 51.67% 11.07%, 53.33% 9.85%, 55.00% 8.05%, 56.67% 5.98%, 58.33% 4.00%, 60.00% 2.45%, 61.67% 1.61%, 63.33% 1.61%, 65.00% 2.45%, 66.67% 4.00%, 68.33% 5.98%, 70.00% 8.05%, 71.67% 9.85%, 73.33% 11.07%, 75.00% 11.50%, 76.67% 11.07%, 78.33% 9.85%, 80.00% 8.05%, 81.67% 5.98%, 83.33% 4.00%, 85.00% 2.45%, 86.67% 1.61%, 88.33% 1.61%, 90.00% 2.45%, 91.67% 4.00%, 93.33% 5.98%, 95.00% 8.05%, 96.67% 9.85%, 98.33% 11.07%, 100.00% 11.50%);
+  position: relative;
+}
+
+.ray-holder {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: start;
+  rotate: 15deg;
+  position: absolute;
+}
+
+.r-ray-holder {
+  left: 100vw;
+}
+.ray {
+  height: 100%;
+}
+
+.ray0 {
+  width: 10%;
+  background: linear-gradient(to bottom, var(--teal0) 10%, rgba(255,255,255,0) 100%);
+}
+.ray1 {
+  width: 13%;
+  background: linear-gradient(to bottom, var(--teal1) 40%, rgba(255,255,255,0) 100%);
+}
+.ray2 {
+  width: 11%;
+  background: linear-gradient(to bottom, var(--teal2) 40%, rgba(255,255,255,0) 100%);;
+}
+.ray3 {
+  width: 8%;
+  background: linear-gradient(to bottom, var(--teal3) 40%, rgba(255,255,255,0) 100%);;
+}
+.ray4 {
+  width: 14%;
+  background: linear-gradient(to bottom, var(--teal4) 40%, rgba(255,255,255,0) 100%);;
+}
+.ray5 {
+  width: 12%;
+  background: linear-gradient(to bottom, var(--teal5) 40%, rgba(255,255,255,0) 100%);;
+}
+.ray6 {
+  width: 3%;
+  background: linear-gradient(to bottom, var(--teal6) 40%, rgba(255,255,255,0) 100%);;
+}
+.ray7 {
+  width: 8%;
+  background: linear-gradient(to bottom, var(--teal7) 40%, rgba(255,255,255,0) 100%);;
+}
+.ray8 {
+  width: 12%;
+  background: linear-gradient(to bottom, var(--teal8) 40%, rgba(255,255,255,0) 100%);;
+}
+.ray9 {
+  width: 9%;
+  background: linear-gradient(to bottom, var(--teal9) 40%, rgba(255,255,255,0) 100%);;
 }
 
 .hill-holder {
@@ -481,16 +559,6 @@ span {
   fill: var(--quint);
   height: 65%;
   width: 120%;
-}
-
-.background-sky-container {
-  background: #F4E6BE;
-  width: 100%;
-  min-height: 162px;
-  height: fit-content;
-  z-index: 0;
-  top:0;
-  pointer-events: none;
 }
 
 
@@ -551,11 +619,13 @@ span {
 }
 
 .background-wave {
-  height: 95px;
+  height: 198px;
+  width: 100vw;
 }
 .wave {
   width: 300vw;
-  height: 100px;
+  min-width: 3840px; /*2*1920*/
+  height: 200px;
   position: relative;
   overflow: hidden;
   background: var(--primary);

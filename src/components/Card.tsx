@@ -68,6 +68,7 @@ export const Card = ({
               alt={imgDesc}
               className="card-img"
               fill={true}
+              sizes="(max-width: 1200px) 80vw, 50vw"
             />
           </div>
           <div className="card-description text-box">

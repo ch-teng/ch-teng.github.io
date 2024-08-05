@@ -157,7 +157,10 @@ const SkillCard = ({ skill }: { skill: Skill }) => {
 
   return (
     <>
-      <motion.p style={{ transform: transformLeft, opacity: p }} ref={itemsRef}>
+      <motion.p
+        style={{ transform: transformLeft, opacity: p, position: "relative" }}
+        ref={itemsRef}
+      >
         <Image src={skill.imgsrc} alt={skill.name} width={60} height={60} />
       </motion.p>
       <motion.span

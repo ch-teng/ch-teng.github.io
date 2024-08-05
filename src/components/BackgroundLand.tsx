@@ -2,147 +2,9 @@ import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import Wave from "./Wave";
 
-interface BGProps {
-  scrollProgress: MotionValue<number>;
-}
-const BG0 = ({ scrollProgress }: BGProps) => {
-  return (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1921 246.33"
-      className="hill-holder b0"
-      initial={{ x: "100rem", opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 1, delay: 0 }}
-      preserveAspectRatio={"xMaxYMin slice"}
-      style={{ y: useTransform(scrollProgress, [0, 1], ["87%", "0%"]) }}
-    >
-      <title>0</title>
-      <path
-        d="M0.5,107.8v638h1920V7.8c0,0-478,93-630,65s-226-113-515-49s-614,17-614,17S108.5,27.8,0.5,107.8z"
-        fill="#fff"
-        className="bg b0"
-        stroke="#000"
-        strokeMiterlimit="10"
-      />
-    </motion.svg>
-  );
-};
-
-const BG1 = ({ scrollProgress }: BGProps) => {
-  return (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1921 391.5"
-      className="hill-holder b1"
-      initial={{ x: "-100rem", opacity: 0 }}
-      animate={{ x: 0, opacity: 0.9 }}
-      transition={{ duration: 1, delay: 0.2 }}
-      preserveAspectRatio={"xMaxYMin slice"}
-      style={{ y: useTransform(scrollProgress, [0, 1], ["40%", "0%"]) }}
-    >
-      <title>1</title>
-      <motion.path
-        className="bg b1"
-        d="M1920.5,85s-217-68-358-67-273,13-357,25-351,56-503,71-148-94-344-112S.5,134,.5,134V391h1920Z"
-        fill="#fff"
-        stroke="#000"
-        strokeMiterlimit="10"
-      />
-    </motion.svg>
-  );
-};
-const BG2 = ({ scrollProgress }: BGProps) => {
-  return (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1921 432.24"
-      className="hill-holder b2"
-      initial={{ x: "100%", opacity: 0 }}
-      animate={{ x: 0, opacity: 0.7 }}
-      transition={{ duration: 1, delay: 0.4 }}
-      preserveAspectRatio={"xMaxYMin slice"}
-      style={{ y: useTransform(scrollProgress, [0, 1], ["20%", "0%"]) }}
-    >
-      <title>2</title>
-      <path
-        className="bg b2"
-        d="M.5,65.74S46.68,96.62,140.59,84.68,556.5,89.74,707.5,20.74s382,60,542,67,501-38,533-66,138,23,138,23v387H.5Z"
-        fill="#fff"
-        stroke="#000"
-        strokeMiterlimit="10"
-      />
-    </motion.svg>
-  );
-};
-
-const BG3 = ({ scrollProgress }: BGProps) => {
-  return (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1921 557.76"
-      className="hill-holder b3"
-      initial={{ opacity: 0, x: "-100rem" }}
-      animate={{ x: 0, opacity: 0.8 }}
-      transition={{ duration: 1, delay: 0.6 }}
-      preserveAspectRatio={"xMaxYMin slice"}
-      style={{ y: useTransform(scrollProgress, [0, 1], ["5%", "0%"]) }}
-    >
-      <title>3</title>
-      <path
-        className="bg b3"
-        d="M.5,54.26s461-114,754-10,399,132,551,82,458-102,615,0v431H.5Z"
-        fill="#fff"
-        stroke="#000"
-        strokeMiterlimit="10"
-      />
-    </motion.svg>
-  );
-};
-
-const BG4 = () => {
-  return (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1921 527.7"
-      className="hill-holder b4"
-      initial={{ x: "100%", opacity: 0 }}
-      animate={{ x: 0, opacity: 0.5 }}
-      transition={{ duration: 1, delay: 0.8 }}
-      preserveAspectRatio={"xMaxYMin slice"}
-    >
-      <title>4</title>
-      <motion.path
-        className="bg b4"
-        d="M.5,85s356,39.17,533-47.83,568,8,568,8,650,101,819,11v471H.5Z"
-        fill="#fff"
-        stroke="#000"
-        strokeMiterlimit="10"
-      />
-    </motion.svg>
-  );
-};
-
-const Test = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1920 55"
-      className="tester"
-    >
-      <g>
-        <path
-          d="M0,0.5c96,0,96,50,192,50c96,0,96-50,192-50s96,50,192,50c96,0,96-50,192-50c96,0,96,50,192,50
-	c96,0,96-50,192-50c96,0,96,50,192,50c96,0,96-50,192-50c96,0,96,50,192,50c96,0,96-50,192-50"
-        />
-      </g>
-    </svg>
-  );
-};
-
+//https://codepen.io/tdoughty/pen/ZZqgQq inspiration
 export default function BackgroundLand() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
   const firstNameContainer = {
     hidden: {
       opacity: 1,
@@ -165,10 +27,40 @@ export default function BackgroundLand() {
     </div>;
   };
 
+  let rays = [];
+  for (let i = 0; i < 10; i++) {
+    rays.push(
+      <motion.div
+        animate={{ opacity: [0.8, 0.2, 0.8] }}
+        transition={{
+          repeat: Infinity,
+          duration: Math.random() * 3 + 2,
+        }}
+        className={`ray ray${i}`}
+        key={i}
+      ></motion.div>
+    );
+  }
+
   return (
-    <div className="background-ground-container" ref={ref}>
-      <Wave aboveColor="#F4E6BE" belowColor="#BCF8EC" />
-      <Test />
+    <div className="background-ground" ref={ref}>
+      <motion.div
+        className="shimmer-water"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+      >
+        <div className="ray-motion">
+          <motion.div className="ray-holder" initial={{ x: "-10%", y: "-30%" }}>
+            {rays.map((ray) => ray)}
+          </motion.div>
+          <motion.div
+            className="ray-holder r-ray-holder"
+            initial={{ x: "-10%", y: "-30%" }}
+          >
+            {rays.map((ray) => ray)}
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 }

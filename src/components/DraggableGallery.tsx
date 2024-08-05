@@ -9,6 +9,7 @@ export default function DraggableGallery() {
     "/about-photos/4.JPG",
     "/about-photos/5.JPG",
     "/about-photos/6.JPG",
+    "/about-photos/7.JPG",
   ];
   const variants = {
     enter: (direction: number) => {
@@ -78,6 +79,7 @@ export default function DraggableGallery() {
             src={photoList[imageIndex]}
             alt="about image"
             fill={true}
+            sizes="(max-width: 1600px) 70vw, 30vw"
             draggable={false}
           />
         </motion.div>
