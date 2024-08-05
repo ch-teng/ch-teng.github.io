@@ -5,9 +5,9 @@
   --tertiary: #25455F;
   --quad: #183146;
   --quint: #0A132B;
-  --teal0: #8bf0dc;
-  --teal1: #9fe9f7;
-  --teal2: #5dc7ab;
+  --teal0: #aae0d5;
+  --teal1: #caebf1;
+  --teal2: #8fcfbe;
   --teal3: #a6d3df;
   --teal4: #99f8e5;
   --teal5: #9ce0dc;
@@ -141,6 +141,8 @@ span {
   width: 100%;
   height: fit-content;
   min-height: 1080px;
+  overflow-x: clip;
+  overflow-y: hidden;
 }
 
 .slide-text {
@@ -203,6 +205,7 @@ span {
   justify-content: start;
   height: fit-content;
   min-height: 1080px;
+
 }
 .scroller {
   z-index: 10;
@@ -433,27 +436,24 @@ span {
 /* Whoami css */
 
 .whoami {
-  height: 1400px;
+  height: 1080px;
+  background: #F4E6BE;
 }
 
-.background-sky {
-  background: #F4E6BE;
-  width: 100%;
-  height: 5%;
-}
 
 .background-ground { 
   background: #F4E6BE;
   width: 100%;
-  height: 95%;
+  height: 100%;
   position:relative;
+  overflow-x: hidden;
+  overflow-y: clip;
 }
-.tester {
-  fill:none;
-  stroke: white;
-  stroke-width:5;
-  stroke-miterlimit:10;
-  z-index: 1000;
+
+.on-load-bg {
+  width: 100%;
+  height: 100%;
+
 }
 
 .shimmer-water {
@@ -463,9 +463,16 @@ span {
   min-width: 1920px;
   clip-path: polygon(100% 100%, 0% 100% , 0.00% 11.50%, 1.67% 11.07%, 3.33% 9.85%, 5.00% 8.05%, 6.67% 5.98%, 8.33% 4.00%, 10.00% 2.45%, 11.67% 1.61%, 13.33% 1.61%, 15.00% 2.45%, 16.67% 4.00%, 18.33% 5.98%, 20.00% 8.05%, 21.67% 9.85%, 23.33% 11.07%, 25.00% 11.50%, 26.67% 11.07%, 28.33% 9.85%, 30.00% 8.05%, 31.67% 5.98%, 33.33% 4.00%, 35.00% 2.45%, 36.67% 1.61%, 38.33% 1.61%, 40.00% 2.45%, 41.67% 4.00%, 43.33% 5.98%, 45.00% 8.05%, 46.67% 9.85%, 48.33% 11.07%, 50.00% 11.50%, 51.67% 11.07%, 53.33% 9.85%, 55.00% 8.05%, 56.67% 5.98%, 58.33% 4.00%, 60.00% 2.45%, 61.67% 1.61%, 63.33% 1.61%, 65.00% 2.45%, 66.67% 4.00%, 68.33% 5.98%, 70.00% 8.05%, 71.67% 9.85%, 73.33% 11.07%, 75.00% 11.50%, 76.67% 11.07%, 78.33% 9.85%, 80.00% 8.05%, 81.67% 5.98%, 83.33% 4.00%, 85.00% 2.45%, 86.67% 1.61%, 88.33% 1.61%, 90.00% 2.45%, 91.67% 4.00%, 93.33% 5.98%, 95.00% 8.05%, 96.67% 9.85%, 98.33% 11.07%, 100.00% 11.50%);
   position: relative;
+  overflow-y: clip;
+  z-index: 0;
+
 }
 
+.ray-motion {
+  height: 100%;
+}
 .ray-holder {
+  z-index: 1;
   width: 100vw;
   height: 100%;
   display: flex;
@@ -481,86 +488,121 @@ span {
 }
 .ray {
   height: 100%;
+  --ray-percent: 10%;
+  --ray-transparent-percent: 100%
 }
 
 .ray0 {
-  width: 10%;
-  background: linear-gradient(to bottom, var(--teal0) 10%, rgba(255,255,255,0) 100%);
+  width: 7%;
+  background: linear-gradient(to bottom, var(--teal0) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));
 }
 .ray1 {
-  width: 13%;
-  background: linear-gradient(to bottom, var(--teal1) 40%, rgba(255,255,255,0) 100%);
+  width: 5%;
+  background: linear-gradient(to bottom, var(--teal1) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));
 }
 .ray2 {
-  width: 11%;
-  background: linear-gradient(to bottom, var(--teal2) 40%, rgba(255,255,255,0) 100%);;
+  width: 4%;
+  background: linear-gradient(to bottom, var(--teal2) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
 }
 .ray3 {
   width: 8%;
-  background: linear-gradient(to bottom, var(--teal3) 40%, rgba(255,255,255,0) 100%);;
+  background: linear-gradient(to bottom, var(--teal3) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
 }
 .ray4 {
-  width: 14%;
-  background: linear-gradient(to bottom, var(--teal4) 40%, rgba(255,255,255,0) 100%);;
+  width: 8%;
+  background: linear-gradient(to bottom, var(--teal4) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
 }
 .ray5 {
-  width: 12%;
-  background: linear-gradient(to bottom, var(--teal5) 40%, rgba(255,255,255,0) 100%);;
+  width: 7%;
+  background: linear-gradient(to bottom, var(--teal5) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
 }
 .ray6 {
-  width: 3%;
-  background: linear-gradient(to bottom, var(--teal6) 40%, rgba(255,255,255,0) 100%);;
+  width: 9%;
+  background: linear-gradient(to bottom, var(--teal6) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
 }
 .ray7 {
   width: 8%;
-  background: linear-gradient(to bottom, var(--teal7) 40%, rgba(255,255,255,0) 100%);;
+  background: linear-gradient(to bottom, var(--teal7) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
 }
 .ray8 {
-  width: 12%;
-  background: linear-gradient(to bottom, var(--teal8) 40%, rgba(255,255,255,0) 100%);;
+  width: 7%;
+  background: linear-gradient(to bottom, var(--teal8) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
 }
 .ray9 {
   width: 9%;
-  background: linear-gradient(to bottom, var(--teal9) 40%, rgba(255,255,255,0) 100%);;
+  background: linear-gradient(to bottom, var(--teal9) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
+}
+.ray10 {
+  width: 9%;
+  background: linear-gradient(to bottom, var(--teal3) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
+}
+.ray11 {
+  width: 11%;
+  background: linear-gradient(to bottom, var(--teal4) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
+}
+.ray12 {
+  width: 8%;
+  background: linear-gradient(to bottom, var(--teal1) var(--ray-percent), rgba(255,255,255,0) var(--ray-transparent-percent));;
 }
 
-.hill-holder {
+.stagger-rock {
   position: absolute;
-  left: -10%;
+  left: 0;
   bottom: 0;
+  width: 100%;
+  height: 30%;
 }
-.bg {
-  stroke: none;
-}
-.b4 {
-  fill: var(--primary);
+
+.rock-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30%;
   height: 100%;
-  width: 150%;
-
+  background: var(--quint);
+  clip-path: polygon(0 0, 66% 23%, 100% 100%, 0% 100%);
+  z-index: 2;
 }
-.b3 {
-  fill: var(--secondary);
+.rock-center {
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  width: 100%;
+  height: 33%;
+  background: var(--quint);
+  clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+  z-index: 2;
+}
+.rock-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30%;
   height: 100%;
-  width: 130%;
+  background: var(--quad);
+  clip-path: polygon(100% 0, 23% 66%, 0% 100%, 100% 100%);
+  z-index: 1;
 }
-.b2 {
-  fill: #25455F;
-  height: 80%;
-  width: 120%;
-
+.rock-left-back {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 66%;
+  background: var(--quad);
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+  z-index: 1;
 }
-.b1 {
-  fill: var(--quad);
-  height: 75%;
-  width: 120%;
-
+.rock-right-back {
+  position: absolute;
+  left: 30%;
+  bottom: 0;
+  width: 70%;
+  height: 95%;
+  background: var(--tertiary);
+  clip-path: polygon(0 100%, 40% 0%, 100% 20%, 100% 100%);
+  z-index: 0;
 }
-.b0 {
-  fill: var(--quint);
-  height: 65%;
-  width: 120%;
-}
-
 
 .name {
   position: absolute;
@@ -619,7 +661,9 @@ span {
 }
 
 .background-wave {
-  height: 198px;
+  overflow-x: hidden;
+
+  height: 200px;
   width: 100vw;
 }
 .wave {

@@ -28,7 +28,7 @@ export default function About() {
             opacity: 1,
           }}
           transition={{ stiffness: 200, duration: 0.5 }}
-          viewport={{ amount: 0.25 }}
+          viewport={{ amount: 0.1 }}
         >
           <DraggableGallery />
         </motion.div>
