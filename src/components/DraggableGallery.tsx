@@ -9,7 +9,7 @@ export default function DraggableGallery() {
     "/about-photos/4.JPG",
     "/about-photos/5.JPG",
     "/about-photos/6.JPG",
-    "/about-photos/7.jpg",
+    "/about-photos/7.JPG",
   ];
   const variants = {
     enter: (direction: number) => {
@@ -36,7 +36,10 @@ export default function DraggableGallery() {
 
   const [[page, direction], setPage] = useState([0, 0]);
 
-  const imageIndex = Math.abs(page % photoList.length);
+  const imageIndex =
+    page >= 0
+      ? page % photoList.length
+      : photoList.length + ((page + 1) % photoList.length) - 1;
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
