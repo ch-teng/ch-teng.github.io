@@ -9,7 +9,7 @@ export default function DraggableGallery() {
     "/about-photos/4.JPG",
     "/about-photos/5.JPG",
     "/about-photos/6.JPG",
-    "/about-photos/7.JPG",
+    "/about-photos/7.jpg",
   ];
   const variants = {
     enter: (direction: number) => {
