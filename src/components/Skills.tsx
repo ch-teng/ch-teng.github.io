@@ -72,7 +72,7 @@ const skillsList: Skill[] = [
       "Cyress is a front-end testing tool created for the modern web. It is fast, easy and reliable for anything that runs in a browser.",
   },
   {
-    imgsrc: "/skillspng/git.png",
+    imgsrc: "/skillspng/Git.png",
     name: "Git",
     description:
       "Git is a distributed version control system that is used to track changes in source code during software development.",
