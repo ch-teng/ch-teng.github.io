@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type CardProps = {
   imgSrc: string;
@@ -19,6 +19,8 @@ export const Card = ({
 }: CardProps) => {
   const [showSideInfo, setShowSideInfo] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
   const sideInfoSlide: Variants = {
     hidden: {
       x: "-110px",
@@ -43,6 +45,19 @@ export const Card = ({
     if (sideInfo) setShowSideInfo(!showSideInfo);
   };
 
+  const handleResize = () => {
+    if (window.innerWidth < 650) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="card-layout">
       <motion.div
@@ -51,7 +66,9 @@ export const Card = ({
         variants={mainInfoSlide}
         initial={false}
         animate={
-          showSideInfo
+          isMobile
+            ? { x: 0 }
+            : showSideInfo
             ? "showingSide"
             : sideInfo && isHovered
             ? "hover"
@@ -82,7 +99,15 @@ export const Card = ({
           className="card-description card-side-info text-box"
           variants={sideInfoSlide}
           initial={false}
-          animate={showSideInfo ? "visible" : isHovered ? "hover" : "hidden"}
+          animate={
+            isMobile
+              ? { x: 0 }
+              : showSideInfo
+              ? "visible"
+              : isHovered
+              ? "hover"
+              : "hidden"
+          }
           transition={{ type: "spring", stiffness: 100, ease: "easeOut" }}
         >
           {sideInfo.replaceAll(",", "\n")}

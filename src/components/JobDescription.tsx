@@ -48,6 +48,8 @@ export const JobDescription = ({
             description={companyDesc}
           />
         </motion.div>
+      </AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.div
           className="job-card"
           key={jobImg}
@@ -58,7 +60,7 @@ export const JobDescription = ({
           animate={{
             opacity: 1,
             x: 0,
-            transition: { duration: 0.2, delay: 0.2, ease: "easeOut" },
+            transition: { duration: 0.2, delay: 0.4, ease: "easeOut" },
           }}
           exit={{
             opacity: 0,

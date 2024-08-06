@@ -82,7 +82,7 @@ export default function DraggableGallery() {
             src={photoList[imageIndex]}
             alt="about image"
             fill={true}
-            sizes="(max-width: 1600px) 70vw, 30vw"
+            sizes="(max-width: 650) 100vw, (max-width: 1600px) 70vw, 30vw"
             draggable={false}
           />
         </motion.div>
