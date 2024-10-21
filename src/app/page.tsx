@@ -8,13 +8,13 @@ import Hamburger from "@/components/Hamburger";
 
 export default function Home() {
   return (
-    <body>
+    <>
       <Hamburger />
       <Whoami />
       <About />
       <Experiences />
       <Skills />
       <Footer />
-    </body>
+    </>
   );
 }

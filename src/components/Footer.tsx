@@ -12,9 +12,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="background-above-footer">
-        <Wave belowColor="#BCF8EC" aboveColor="#0A132B" />
-      </div>
+      <Wave belowColor="#BCF8EC" aboveColor="#0A132B" />
       <footer className="footer">
         <ul className="section list">
           <motion.li
