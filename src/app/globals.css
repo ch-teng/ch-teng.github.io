@@ -699,7 +699,7 @@ span {
 }
 .skill-card {
   margin: 10px;
-  max-width: 60vw;
+  width: 60vw;
 }
 
 .scrollBody {
